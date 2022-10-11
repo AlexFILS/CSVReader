@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685528F5AD6800C128DC /* AppDelegate.swift */; };
 		8EFD685828F5AD6800C128DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685728F5AD6800C128DC /* SceneDelegate.swift */; };
-		8EFD685A28F5AD6800C128DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* ViewController.swift */; };
-		8EFD685D28F5AD6800C128DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685B28F5AD6800C128DC /* Main.storyboard */; };
+		8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
+		8EFD685D28F5AD6800C128DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685B28F5AD6800C128DC /* Home.storyboard */; };
 		8EFD685F28F5AD6A00C128DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685E28F5AD6A00C128DC /* Assets.xcassets */; };
 		8EFD686228F5AD6A00C128DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD686028F5AD6A00C128DC /* LaunchScreen.storyboard */; };
 		8EFD686D28F5AD6A00C128DC /* CSVReader_SBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD686C28F5AD6A00C128DC /* CSVReader_SBTests.swift */; };
@@ -39,8 +39,8 @@
 		8EFD685228F5AD6800C128DC /* CSVReader_SB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVReader_SB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD685528F5AD6800C128DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD685728F5AD6800C128DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8EFD685928F5AD6800C128DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8EFD685C28F5AD6800C128DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8EFD685928F5AD6800C128DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8EFD685C28F5AD6800C128DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		8EFD685E28F5AD6A00C128DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EFD686128F5AD6A00C128DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EFD686328F5AD6A00C128DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +76,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E1AF52E28F5B0700040873C /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				8EFD686328F5AD6A00C128DC /* Info.plist */,
+				8EFD685728F5AD6800C128DC /* SceneDelegate.swift */,
+				8EFD685528F5AD6800C128DC /* AppDelegate.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		8E1AF52F28F5B1B50040873C /* CSVReader */ = {
+			isa = PBXGroup;
+			children = (
+				8E1AF53428F5B2050040873C /* Utils */,
+				8E1AF53028F5B1BE0040873C /* HomePage */,
+			);
+			path = CSVReader;
+			sourceTree = "<group>";
+		};
+		8E1AF53028F5B1BE0040873C /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				8EFD685B28F5AD6800C128DC /* Home.storyboard */,
+				8E1AF53328F5B1F10040873C /* ViewModels */,
+				8E1AF53228F5B1DD0040873C /* Models */,
+				8E1AF53128F5B1D50040873C /* ViewControllers */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		8E1AF53128F5B1D50040873C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8EFD685928F5AD6800C128DC /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8E1AF53228F5B1DD0040873C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8E1AF53328F5B1F10040873C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8E1AF53428F5B2050040873C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E1AF53528F5B20D0040873C /* Readers */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8E1AF53528F5B20D0040873C /* Readers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Readers;
+			sourceTree = "<group>";
+		};
 		8EFD684928F5AD6800C128DC = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +166,10 @@
 		8EFD685428F5AD6800C128DC /* CSVReader_SB */ = {
 			isa = PBXGroup;
 			children = (
-				8EFD685528F5AD6800C128DC /* AppDelegate.swift */,
-				8EFD685728F5AD6800C128DC /* SceneDelegate.swift */,
-				8EFD685928F5AD6800C128DC /* ViewController.swift */,
-				8EFD685B28F5AD6800C128DC /* Main.storyboard */,
+				8E1AF52F28F5B1B50040873C /* CSVReader */,
+				8E1AF52E28F5B0700040873C /* Supporting files */,
 				8EFD685E28F5AD6A00C128DC /* Assets.xcassets */,
 				8EFD686028F5AD6A00C128DC /* LaunchScreen.storyboard */,
-				8EFD686328F5AD6A00C128DC /* Info.plist */,
 			);
 			path = CSVReader_SB;
 			sourceTree = "<group>";
@@ -233,7 +297,7 @@
 			files = (
 				8EFD686228F5AD6A00C128DC /* LaunchScreen.storyboard in Resources */,
 				8EFD685F28F5AD6A00C128DC /* Assets.xcassets in Resources */,
-				8EFD685D28F5AD6800C128DC /* Main.storyboard in Resources */,
+				8EFD685D28F5AD6800C128DC /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EFD685A28F5AD6800C128DC /* ViewController.swift in Sources */,
+				8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */,
 				8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */,
 				8EFD685828F5AD6800C128DC /* SceneDelegate.swift in Sources */,
 			);
@@ -297,12 +361,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8EFD685B28F5AD6800C128DC /* Main.storyboard */ = {
+		8EFD685B28F5AD6800C128DC /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8EFD685C28F5AD6800C128DC /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		8EFD686028F5AD6A00C128DC /* LaunchScreen.storyboard */ = {
@@ -438,7 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CSVReader_SB/Info.plist;
+				INFOPLIST_FILE = "CSVReader_SB/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -453,7 +517,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -465,7 +529,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CSVReader_SB/Info.plist;
+				INFOPLIST_FILE = "CSVReader_SB/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -480,7 +544,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
