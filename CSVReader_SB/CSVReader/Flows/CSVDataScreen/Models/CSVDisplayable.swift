@@ -7,11 +7,18 @@
 
 import Foundation
 
-class CSVDisplayable: CSVDataCellType {
-    var mainLabelTitle: String
-    var mainLabelSubtitle: String
-    var secondaryLabelTitle: String
-    var secondaryLabelSubtitle: String
+protocol CSVDisplayableType {
+    var mainLabelTitle: String { get }
+    var mainLabelSubtitle: String { get }
+    var secondaryLabelTitle: String { get }
+    var secondaryLabelSubtitle: String { get }
+}
+
+class CSVDisplayable: CSVDisplayableType {
+    let mainLabelTitle: String
+    let mainLabelSubtitle: String
+    let secondaryLabelTitle: String
+    let secondaryLabelSubtitle: String
     
     init(mainLabelTitle: String, mainLabelSubtitle: String, secondaryLabelTitle: String, secondaryLabelSubtitle: String) {
         self.mainLabelTitle = mainLabelTitle

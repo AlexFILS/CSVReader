@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CSVDataViewModelType {
-    associatedtype ContainedDataType: CSVDataCellType
+    associatedtype ContainedDataType: CSVDisplayable
     var coordinator: CSVDataFlowCoordinatorType? { get }
     var data: [ContainedDataType] { get }
     var numberOfRows: Int { get }

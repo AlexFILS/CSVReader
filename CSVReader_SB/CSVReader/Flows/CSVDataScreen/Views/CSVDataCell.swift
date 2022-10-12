@@ -13,7 +13,7 @@ class CSVDataCell: UITableViewCell {
     @IBOutlet weak var secondaryLabelTitle: UILabel!
     @IBOutlet weak var secondaryLabelDescription: UILabel!
     
-    func configureCell(from viewModel: CSVDataCellType) {
+    func configureCell(from viewModel: CSVDisplayableType) {
         mainLabelTitle.text = viewModel.mainLabelTitle
         mainLabelDescription.text = viewModel.mainLabelSubtitle
         secondaryLabelTitle.text = viewModel.secondaryLabelTitle
