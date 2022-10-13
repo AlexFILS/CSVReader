@@ -17,7 +17,11 @@ class CSVDataViewController: BaseViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.viewModel?.coordinator?.finishFlow()
+        self.viewModel?.coordinator?.popController()
+    }
+    
+    @IBAction func backtapped(_ sender: Any) {
+        self.viewModel?.coordinator?.popController()
     }
 }
 

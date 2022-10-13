@@ -8,8 +8,8 @@
 import Foundation
 
 protocol CSVDataViewModelType {
-    associatedtype ContainedDataType: CSVDisplayable
-    var coordinator: CSVDataFlowCoordinatorType? { get }
+    associatedtype ContainedDataType: CSVDisplayableType
+    var coordinator: MainCoordinator? { get }
     var data: [ContainedDataType] { get }
     var numberOfRows: Int { get }
     var numberOfSections: Int { get }
@@ -17,9 +17,8 @@ protocol CSVDataViewModelType {
 }
 
 class CSVDataViewModel: CSVDataViewModelType {
-   
     typealias ContainedDataType = CSVDisplayable
-    weak var coordinator: CSVDataFlowCoordinatorType?
+    weak var coordinator: MainCoordinator?
     var data: [CSVDisplayable]
     var numberOfSections = 0
     

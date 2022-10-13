@@ -23,25 +23,22 @@ class MainCoordinator: Coordinator {
 
     func goToHomePage() {
         let homeViewController = HomeViewController.instantiate(flow: .home)
-        let homeViewModel = HomeViewModel.init()
+        let csvReader = IssueReader(numberOfColumns: 4)
+        let homeViewModel = HomeViewModel.init(csvReader: csvReader, coordinator: self)
         homeViewModel.coordinator = self
         homeViewController.viewModel = homeViewModel
         navigationController.pushViewController(homeViewController, animated: true)
     }
     
-    func goToCSVViewer() {
-        let child = CSVDataFlowCoordinator(navController: navigationController)
-        child.parentCoordinator = self
-        children.append(child)
-        child.start()
+    func goToCSVViewer(data: [CSVDisplayable]) {
+        let csvDataViewController = CSVDataViewController.instantiate(flow: .csvViewer)
+        let viewModel = CSVDataViewModel.init(data: data)
+        viewModel.coordinator = self
+        csvDataViewController.viewModel = viewModel
+        navigationController.pushViewController(csvDataViewController, animated: true)
     }
     
-    func childDidFinish(_ child: Coordinator?) {
-        for (index, coordinator) in children.enumerated() {
-            if coordinator === child {
-                children.remove(at: index)
-                break
-            }
-        }
+    func popController() {
+        navigationController.popViewController(animated: true)
     }
 }
