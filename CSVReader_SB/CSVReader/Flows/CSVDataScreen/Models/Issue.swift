@@ -7,8 +7,7 @@
 
 import Foundation
 
-class Issue: CSVDisplayable {
-    
+class Issue: CSVDisplayable, Equatable {
     init(name: String,
          surname: String,
          dateOfBirth: String,
@@ -18,5 +17,13 @@ class Issue: CSVDisplayable {
                    mainLabelSubtitle: dateOfBirth,
                    secondaryLabelTitle: "Issues",
                    secondaryLabelSubtitle:  issueCount)
+    }
+    
+    
+    static func == (lhs: Issue, rhs: Issue) -> Bool {
+        return lhs.secondaryLabelSubtitle == rhs.secondaryLabelSubtitle &&
+        lhs.mainLabelSubtitle == rhs.mainLabelSubtitle &&
+        lhs.mainLabelTitle == rhs.mainLabelTitle &&
+        lhs.secondaryLabelTitle == rhs.secondaryLabelTitle
     }
 }

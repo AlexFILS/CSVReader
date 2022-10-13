@@ -37,6 +37,8 @@
 		8E1AF57A28F855A50040873C /* IssueReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57928F855A50040873C /* IssueReader.swift */; };
 		8E1AF57C28F856CF0040873C /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57B28F856CF0040873C /* Issue.swift */; };
 		8E1AF57D28F856CF0040873C /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57B28F856CF0040873C /* Issue.swift */; };
+		8E1AF57F28F8837E0040873C /* CSVIssueReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57E28F8837E0040873C /* CSVIssueReaderTest.swift */; };
+		8E1AF58028F884AE0040873C /* IssueReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57928F855A50040873C /* IssueReader.swift */; };
 		8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685528F5AD6800C128DC /* AppDelegate.swift */; };
 		8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
 		8EFD685D28F5AD6800C128DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685B28F5AD6800C128DC /* Home.storyboard */; };
@@ -80,6 +82,7 @@
 		8E1AF56828F745F50040873C /* CSVDataViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDataViewModelTest.swift; sourceTree = "<group>"; };
 		8E1AF57928F855A50040873C /* IssueReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReader.swift; sourceTree = "<group>"; };
 		8E1AF57B28F856CF0040873C /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		8E1AF57E28F8837E0040873C /* CSVIssueReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVIssueReaderTest.swift; sourceTree = "<group>"; };
 		8EFD685228F5AD6800C128DC /* CSVReader_SB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVReader_SB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD685528F5AD6800C128DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD685928F5AD6800C128DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -281,8 +284,9 @@
 		8EFD686B28F5AD6A00C128DC /* CSVReader_SBTests */ = {
 			isa = PBXGroup;
 			children = (
-				8EFD686C28F5AD6A00C128DC /* CSVReader_SBTests.swift */,
+				8E1AF57E28F8837E0040873C /* CSVIssueReaderTest.swift */,
 				8E1AF56828F745F50040873C /* CSVDataViewModelTest.swift */,
+				8EFD686C28F5AD6A00C128DC /* CSVReader_SBTests.swift */,
 			);
 			path = CSVReader_SBTests;
 			sourceTree = "<group>";
@@ -463,6 +467,8 @@
 				8E1AF57328F74E250040873C /* CSVDataViewController.swift in Sources */,
 				8E1AF56C28F74D2D0040873C /* CSVDataViewModel.swift in Sources */,
 				8E1AF56E28F74D570040873C /* Coordinator.swift in Sources */,
+				8E1AF58028F884AE0040873C /* IssueReader.swift in Sources */,
+				8E1AF57F28F8837E0040873C /* CSVIssueReaderTest.swift in Sources */,
 				8E1AF57428F74E3B0040873C /* UIStoryboard+Extension.swift in Sources */,
 				8E1AF57D28F856CF0040873C /* Issue.swift in Sources */,
 			);

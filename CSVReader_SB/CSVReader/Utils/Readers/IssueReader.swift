@@ -12,7 +12,7 @@ protocol CSVReaderType<ReaderOutput> {
     var numberOfColumns: Int { get }
     var loadedCSVData: String? { get set }
     func readCsv() -> [ReaderOutput]?
-    func csvTypeIsSupported(numberOfRows: Int) -> Bool
+    func csvTypeIsSupported() -> Bool
 }
 
 class IssueReader: CSVReaderType {
@@ -48,7 +48,7 @@ class IssueReader: CSVReaderType {
         return issues
     }
     
-    func csvTypeIsSupported(numberOfRows: Int) -> Bool {
-        return (loadedCSVData?.components(separatedBy: "\n").count ?? 0) == self.numberOfColumns
+    func csvTypeIsSupported() -> Bool {
+        return (loadedCSVData?.components(separatedBy: ",").count ?? 0) == self.numberOfColumns
     }
 }
