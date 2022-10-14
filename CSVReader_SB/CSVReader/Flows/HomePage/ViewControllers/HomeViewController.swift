@@ -20,10 +20,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func loadCsvButtonTapped(_ sender: Any) {
-        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.commaSeparatedText], asCopy: true)
-        documentPicker.delegate = self
-        documentPicker.modalPresentationStyle = .formSheet
-        self.present(documentPicker, animated: true, completion: nil)
+        self.viewModel.coordinator?.openFilePicker(onController: self)
     }
     
     @IBAction func openCsvButtonTapped(_ sender: Any) {

@@ -9,19 +9,13 @@ import Foundation
 import UIKit
 
 // This is our base coordinator layout
-protocol Coordinator: AnyObject {
-    var children: [Coordinator] { get set }
+protocol CoordinatorType: AnyObject {
+   // No child coordinator list and no removing child function because we don't need them for this app
     var navigationController : UINavigationController { get set }
     func start()
-    func childDidFinish(_ child: Coordinator?)
+    func popController()
 }
 
-protocol DeferringCoordinator {
-    func finishFlow()
-}
-
-extension Coordinator {
-    func childDidFinish(_ child: Coordinator?) {
-        print("Function not implemented.")
-    }
+protocol CSVCapableCoordinatorType {
+    func openFilePicker(onController controller: HomeViewController)
 }

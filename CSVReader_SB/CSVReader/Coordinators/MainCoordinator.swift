@@ -8,9 +8,8 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
-
-    var children: [Coordinator] = []
+class MainCoordinator: CoordinatorType, CSVCapableCoordinatorType {
+    
     var navigationController: UINavigationController
     
     init(navController : UINavigationController) {
@@ -40,5 +39,12 @@ class MainCoordinator: Coordinator {
     
     func popController() {
         navigationController.popViewController(animated: true)
+    }
+    
+    func openFilePicker(onController controller: HomeViewController) {
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.commaSeparatedText], asCopy: true)
+        documentPicker.delegate = controller
+        documentPicker.modalPresentationStyle = .formSheet
+        controller.present(documentPicker, animated: true)
     }
 }
