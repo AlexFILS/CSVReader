@@ -15,8 +15,8 @@ class HomeViewController: BaseViewController {
     var viewModel: HomeViewModelType!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.initialScreenSetup()
+        super.viewDidLoad()
     }
     
     // MARK: - Button actions
@@ -25,11 +25,14 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func openCsvButtonTapped(_ sender: Any) {
+        self.showLoadingIndicator()
         guard self.viewModel.csvReader.csvTypeIsSupported(),
               let data = self.viewModel.csvReader.parseData() as? [Issue] else {
+            self.hideLoadingIndicator()
             self.showAlert()
             return
         }
+        self.hideLoadingIndicator()
         self.viewModel.coordinator?.goToCSVViewer(data: data)
     }
     
