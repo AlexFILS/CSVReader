@@ -12,7 +12,8 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var openCsvButton: UIButton!
     @IBOutlet weak var loadCsvButton: UIButton!
-    var viewModel: HomeViewModel!
+    var viewModel: HomeViewModelType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialScreenSetup()
@@ -47,11 +48,11 @@ extension HomeViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let url = urls.first,
               let data = try? String(contentsOfFile: url.path)  else {
-            self.viewModel.loadCVCUrl(data: nil)
+            self.viewModel.loadCSVUrl(data: nil)
             self.openCsvButton.isEnabled = self.viewModel.readyToParseData
             return
         }
-        self.viewModel.loadCVCUrl(data: data)
+        self.viewModel.loadCSVUrl(data: data)
         self.openCsvButton.isEnabled = self.viewModel.readyToParseData
     }
 }

@@ -7,7 +7,16 @@
 
 import Foundation
 
-class HomeViewModel {
+protocol HomeViewModelType {
+    var csvReader: any CSVReaderType { get }
+    var coordinator: MainCoordinator? {get }
+    var readyToParseData: Bool { get }
+    var findCsvButtonTitle: String { get }
+    var parseCsvDataButtonTitle: String { get }
+    func goToCSVViewer()
+    func loadCSVUrl(data: String?)
+}
+class HomeViewModel: HomeViewModelType {
     var csvReader: any CSVReaderType
     weak var coordinator : MainCoordinator?
     let findCsvButtonTitle = "Find and load CSV"
@@ -24,7 +33,7 @@ class HomeViewModel {
         }
     }
     
-    func loadCVCUrl(data: String?) {
+    func loadCSVUrl(data: String?) {
         self.csvReader.loadedCSVData = data
     }
     
