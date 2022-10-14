@@ -9,10 +9,7 @@ import UIKit
 import UniformTypeIdentifiers
 
 class HomeViewController: BaseViewController {
-    enum CustomError: Error {
-        case notAnItOrADouble(String)
-    }
-    
+
     @IBOutlet weak var openCsvButton: UIButton!
     @IBOutlet weak var loadCsvButton: UIButton!
     var viewModel: HomeViewModel!
