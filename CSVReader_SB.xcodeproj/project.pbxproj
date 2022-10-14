@@ -37,14 +37,18 @@
 		8E1AF57A28F855A50040873C /* IssueReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57928F855A50040873C /* IssueReader.swift */; };
 		8E1AF57C28F856CF0040873C /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57B28F856CF0040873C /* Issue.swift */; };
 		8E1AF57D28F856CF0040873C /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57B28F856CF0040873C /* Issue.swift */; };
-		8E1AF57F28F8837E0040873C /* CSVIssueReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57E28F8837E0040873C /* CSVIssueReaderTest.swift */; };
+		8E1AF57F28F8837E0040873C /* IssueReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57E28F8837E0040873C /* IssueReaderTest.swift */; };
 		8E1AF58028F884AE0040873C /* IssueReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57928F855A50040873C /* IssueReader.swift */; };
+		8E1AF58228F952040040873C /* DummyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF58128F952030040873C /* DummyReader.swift */; };
+		8E1AF58328F952040040873C /* DummyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF58128F952030040873C /* DummyReader.swift */; };
+		8E1AF58528F95C820040873C /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF58428F95C820040873C /* HomeViewModelTest.swift */; };
+		8E1AF58728F95D660040873C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF58628F95D660040873C /* Constants.swift */; };
+		8E1AF58828F95D660040873C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF58628F95D660040873C /* Constants.swift */; };
 		8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685528F5AD6800C128DC /* AppDelegate.swift */; };
 		8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
 		8EFD685D28F5AD6800C128DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685B28F5AD6800C128DC /* Home.storyboard */; };
 		8EFD685F28F5AD6A00C128DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685E28F5AD6A00C128DC /* Assets.xcassets */; };
 		8EFD686228F5AD6A00C128DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD686028F5AD6A00C128DC /* LaunchScreen.storyboard */; };
-		8EFD686D28F5AD6A00C128DC /* CSVReader_SBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD686C28F5AD6A00C128DC /* CSVReader_SBTests.swift */; };
 		8EFD687728F5AD6A00C128DC /* CSVReader_SBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD687628F5AD6A00C128DC /* CSVReader_SBUITests.swift */; };
 		8EFD687928F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD687828F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -82,7 +86,10 @@
 		8E1AF56828F745F50040873C /* CSVDataViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDataViewModelTest.swift; sourceTree = "<group>"; };
 		8E1AF57928F855A50040873C /* IssueReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReader.swift; sourceTree = "<group>"; };
 		8E1AF57B28F856CF0040873C /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
-		8E1AF57E28F8837E0040873C /* CSVIssueReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVIssueReaderTest.swift; sourceTree = "<group>"; };
+		8E1AF57E28F8837E0040873C /* IssueReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReaderTest.swift; sourceTree = "<group>"; };
+		8E1AF58128F952030040873C /* DummyReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyReader.swift; sourceTree = "<group>"; };
+		8E1AF58428F95C820040873C /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		8E1AF58628F95D660040873C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8EFD685228F5AD6800C128DC /* CSVReader_SB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVReader_SB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD685528F5AD6800C128DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD685928F5AD6800C128DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +98,6 @@
 		8EFD686128F5AD6A00C128DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EFD686328F5AD6A00C128DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EFD686828F5AD6A00C128DC /* CSVReader_SBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVReader_SBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EFD686C28F5AD6A00C128DC /* CSVReader_SBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader_SBTests.swift; sourceTree = "<group>"; };
 		8EFD687228F5AD6A00C128DC /* CSVReader_SBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVReader_SBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD687628F5AD6A00C128DC /* CSVReader_SBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader_SBUITests.swift; sourceTree = "<group>"; };
 		8EFD687828F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader_SBUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 				8E1AF56328F722AD0040873C /* BaseViewController.swift */,
 				8E1AF56128F722710040873C /* Storyboarded.swift */,
 				8E1AF56628F72BD50040873C /* UIStoryboard+Extension.swift */,
+				8E1AF58628F95D660040873C /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1AF57928F855A50040873C /* IssueReader.swift */,
+				8E1AF58128F952030040873C /* DummyReader.swift */,
 			);
 			path = Readers;
 			sourceTree = "<group>";
@@ -284,9 +292,9 @@
 		8EFD686B28F5AD6A00C128DC /* CSVReader_SBTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E1AF57E28F8837E0040873C /* CSVIssueReaderTest.swift */,
+				8E1AF57E28F8837E0040873C /* IssueReaderTest.swift */,
 				8E1AF56828F745F50040873C /* CSVDataViewModelTest.swift */,
-				8EFD686C28F5AD6A00C128DC /* CSVReader_SBTests.swift */,
+				8E1AF58428F95C820040873C /* HomeViewModelTest.swift */,
 			);
 			path = CSVReader_SBTests;
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */,
+				8E1AF58728F95D660040873C /* Constants.swift in Sources */,
 				8E1AF57A28F855A50040873C /* IssueReader.swift in Sources */,
 				8E1AF54E28F5C3E30040873C /* Coordinator.swift in Sources */,
 				8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */,
@@ -443,6 +452,7 @@
 				8E1AF55428F5C4630040873C /* MainCoordinator.swift in Sources */,
 				8E1AF54928F5BFD10040873C /* CSVDataViewModel.swift in Sources */,
 				8E1AF53F28F5B74E0040873C /* CSVDataCell.swift in Sources */,
+				8E1AF58228F952040040873C /* DummyReader.swift in Sources */,
 				8E1AF53B28F5B4080040873C /* CSVDataViewController.swift in Sources */,
 				8E1AF54528F5B9FD0040873C /* CSVDisplayable.swift in Sources */,
 				8E1AF56728F72BD50040873C /* UIStoryboard+Extension.swift in Sources */,
@@ -458,17 +468,19 @@
 				8E1AF57528F74F250040873C /* CSVDataCell.swift in Sources */,
 				8E1AF54628F5B9FD0040873C /* CSVDisplayable.swift in Sources */,
 				8E1AF56F28F74D660040873C /* MainCoordinator.swift in Sources */,
+				8E1AF58528F95C820040873C /* HomeViewModelTest.swift in Sources */,
 				8E1AF57228F74DC40040873C /* Storyboarded.swift in Sources */,
+				8E1AF58328F952040040873C /* DummyReader.swift in Sources */,
 				8E1AF57128F74D9F0040873C /* BaseViewController.swift in Sources */,
 				8E1AF55D28F5FE830040873C /* Array+Extension.swift in Sources */,
 				8E1AF55928F5C7660040873C /* HomeViewModel.swift in Sources */,
 				8E1AF57028F74D840040873C /* HomeViewController.swift in Sources */,
-				8EFD686D28F5AD6A00C128DC /* CSVReader_SBTests.swift in Sources */,
 				8E1AF57328F74E250040873C /* CSVDataViewController.swift in Sources */,
 				8E1AF56C28F74D2D0040873C /* CSVDataViewModel.swift in Sources */,
 				8E1AF56E28F74D570040873C /* Coordinator.swift in Sources */,
+				8E1AF58828F95D660040873C /* Constants.swift in Sources */,
 				8E1AF58028F884AE0040873C /* IssueReader.swift in Sources */,
-				8E1AF57F28F8837E0040873C /* CSVIssueReaderTest.swift in Sources */,
+				8E1AF57F28F8837E0040873C /* IssueReaderTest.swift in Sources */,
 				8E1AF57428F74E3B0040873C /* UIStoryboard+Extension.swift in Sources */,
 				8E1AF57D28F856CF0040873C /* Issue.swift in Sources */,
 			);

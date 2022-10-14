@@ -31,8 +31,8 @@ class HomeViewController: BaseViewController {
     }
     
     private func setupLabels() {
-        self.openCsvButton.setTitle(self.viewModel.parseCsvDataButtonTitle, for: .normal)
-        self.loadCsvButton.setTitle(self.viewModel.findCsvButtonTitle, for: .normal)
+        self.openCsvButton.setTitle(ButtonTitles.parseCsvDataButtonTitle.rawValue, for: .normal)
+        self.loadCsvButton.setTitle(ButtonTitles.findCsvButtonTitle.rawValue, for: .normal)
     }
     
     private func initialScreenSetup() {

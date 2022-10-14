@@ -13,18 +13,11 @@ class CSVDataViewModelTest: XCTestCase {
     
     // Use a random class that may have data loaded from a CSV and cand be displayed in the csv reader table
     class Person: CSVDisplayable {
-        let name: String
-        let surname: String
-        let dateOfBirth: Date
-     
         init(name: String, surname: String, dateOfBirth: Date) {
-            self.name = name
-            self.surname = surname
-            self.dateOfBirth = dateOfBirth
             super.init(mainLabelTitle: "Full Name",
-                       mainLabelSubtitle: self.name + " " + self.surname,
+                       mainLabelSubtitle: name + " " + surname,
                        secondaryLabelTitle: "Date of Birth",
-                       secondaryLabelSubtitle:   self.dateOfBirth.ISO8601Format())
+                       secondaryLabelSubtitle: dateOfBirth.ISO8601Format())
         }
     }
     

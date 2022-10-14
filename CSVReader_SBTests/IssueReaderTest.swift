@@ -1,5 +1,5 @@
 //
-//  CSVIssueReaderTest.swift
+//  IssueReaderTest.swift
 //  CSVReader_SBTests
 //
 //  Created by Alexandru Mihai on 13.10.2022.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-class CSVIssueReaderTest: XCTestCase {
+class IssueReaderTest: XCTestCase {
     
     
     func testCanHandleType() {
