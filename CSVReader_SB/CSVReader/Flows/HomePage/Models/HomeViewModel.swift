@@ -18,6 +18,7 @@ class HomeViewModel: HomeViewModelType {
     var csvReader: any CSVReaderType
     weak var coordinator : MainCoordinator?
     
+    // MARK: - Init
     init(csvReader: any CSVReaderType, coordinator: MainCoordinator?) {
         self.csvReader = csvReader
         self.coordinator = coordinator

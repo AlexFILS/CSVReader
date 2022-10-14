@@ -25,6 +25,7 @@ class CSVDataViewModel: CSVDataViewModelType {
     weak var coordinator: MainCoordinator?
     private var sections = [Section]()
     
+    // MARK: - Init
     init(data: [ContainedDataType]) {
         self.generateSections(data: data)
     }

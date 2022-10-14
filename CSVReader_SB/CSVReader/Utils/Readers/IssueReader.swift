@@ -23,10 +23,12 @@ class IssueReader: CSVReaderType {
     var loadedCSVData: String?
     private(set) var numberOfColumns: Int
     
+    // MARK: - Init
     init(numberOfColumns: Int) {
         self.numberOfColumns = numberOfColumns
     }
     
+    // MARK: - Functions
     func readRawData() {
         guard let data = self.loadedCSVData else {
             return

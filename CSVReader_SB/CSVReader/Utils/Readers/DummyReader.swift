@@ -30,10 +30,12 @@ class DummyReader: CSVReaderType {
     var numberOfColumns: Int
     var loadedCSVData: String?
     
+    // MARK: - Init
     init(numberOfColumns: Int) {
         self.numberOfColumns = numberOfColumns
     }
     
+    // MARK: - Functions
     func parseData() -> [DummyReaderOutputObject] {
         return [
             DummyReaderOutputObject(store: "Fashion Outlet",

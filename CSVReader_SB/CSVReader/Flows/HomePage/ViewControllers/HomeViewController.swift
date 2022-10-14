@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
         self.initialScreenSetup()
     }
     
+    // MARK: - Button actions
     @IBAction func loadCsvButtonTapped(_ sender: Any) {
         self.viewModel.coordinator?.openFilePicker(onController: self)
     }
@@ -32,6 +33,7 @@ class HomeViewController: BaseViewController {
         self.viewModel.coordinator?.goToCSVViewer(data: data)
     }
     
+    // MARK: - Functions
     private func setupLabels() {
         self.openCsvButton.setTitle(ButtonTitles.parseCsvDataButtonTitle.rawValue, for: .normal)
         self.loadCsvButton.setTitle(ButtonTitles.findCsvButtonTitle.rawValue, for: .normal)
@@ -52,6 +54,7 @@ class HomeViewController: BaseViewController {
     }
 }
 
+// MARK: - Document Picker Delegate
 extension HomeViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let url = urls.first,

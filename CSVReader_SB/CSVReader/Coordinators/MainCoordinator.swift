@@ -12,6 +12,7 @@ class MainCoordinator: CoordinatorType, CSVCapableCoordinatorType {
     
     var navigationController: UINavigationController
     
+    // MARK: - Init
     init(navController : UINavigationController) {
         self.navigationController = navController
     }
