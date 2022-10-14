@@ -8,29 +8,57 @@
 import Foundation
 
 protocol CSVDataViewModelType {
-    associatedtype ContainedDataType: CSVDisplayableType
     var coordinator: MainCoordinator? { get }
-    var data: [ContainedDataType] { get }
-    var numberOfRows: Int { get }
-    var numberOfSections: Int { get }
-    func viewModelForIndex(_ index: Int) -> ContainedDataType?
 }
 
 class CSVDataViewModel: CSVDataViewModelType {
     typealias ContainedDataType = CSVDisplayable
+    
+    public enum CellType {
+        case issueCell(cellViewModel: ContainedDataType)
+    }
+    
+    public struct Section {
+        let items: [CellType]
+    }
+    
     weak var coordinator: MainCoordinator?
-    var data: [CSVDisplayable]
-    var numberOfSections = 0
+    private var sections = [Section]()
     
-    init(data: [CSVDisplayable]) {
-        self.data = data
+    init(data: [ContainedDataType]) {
+        self.generateSections(data: data)
     }
     
-    func viewModelForIndex(_ index: Int) -> CSVDisplayable? {
-        return data.elementAtPosition(index)
+    func modelForIndex(_ indexPath: IndexPath) -> CellType? {
+        if let section = self.sections.elementAtPosition(indexPath.section),
+           let model = section.items.elementAtPosition(indexPath.row) {
+            return model
+        } else {
+            return nil
+        }
     }
     
-    var numberOfRows: Int {
-        return data.count
+    func numberOfRows(inSection: Int) -> Int {
+        return self.sections.elementAtPosition(inSection)?.items.count ?? 0
+    }
+    
+    func generateSections(data: [ContainedDataType]) {
+        var sections = [Section]()
+        if let issueSection = self.generateIssuesSection(data: data) {
+            sections.append(issueSection)
+        }
+        self.sections = sections
+    }
+    
+    func generateIssuesSection(data: [ContainedDataType]) -> Section? {
+        var cells = [CellType]()
+        data.forEach { element in
+            cells.append(.issueCell(cellViewModel: element))
+        }
+        return Section(items: cells)
+    }
+    
+    var numberOfSections: Int {
+        return self.sections.count
     }
 }

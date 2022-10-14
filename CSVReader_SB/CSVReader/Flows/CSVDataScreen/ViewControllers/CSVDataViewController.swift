@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class CSVDataViewController: BaseViewController {
-    var viewModel: (any CSVDataViewModelType)?
+    var viewModel: CSVDataViewModel!
     @IBOutlet weak var csvDataTableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,19 +27,18 @@ class CSVDataViewController: BaseViewController {
 
 extension CSVDataViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let rowCount = self.viewModel?.numberOfRows {
-            return rowCount
-        } else {
-            return 0
-        }
+        return self.viewModel?.numberOfRows(inSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CSVDataCell") as? CSVDataCell,
-              let dataViewModel = self.viewModel?.viewModelForIndex(indexPath.row) else {
+              let item = self.viewModel.modelForIndex(indexPath) else {
             return UITableViewCell()
         }
-        cell.configureCell(from: dataViewModel)
+        switch item {
+        case .issueCell(let viewModel):
+            cell.configureCell(from: viewModel)
+        }
         return cell
     }
 }

@@ -44,23 +44,39 @@ class CSVDataViewModelTest: XCTestCase {
     func testViewModel() {
         let viewModel = CSVDataViewModel(data: self.randomPersons())
         
-        XCTAssertEqual(viewModel.numberOfRows, 3)
+        XCTAssertEqual(viewModel.numberOfRows(inSection: 0), 3)
         
-        var csvEntry = viewModel.viewModelForIndex(1)
-        var dobAsString =  Date(timeIntervalSinceReferenceDate: 123456789.0).ISO8601Format()
-        XCTAssertEqual(csvEntry?.mainLabelTitle, "Full Name")
-        XCTAssertEqual(csvEntry?.mainLabelSubtitle, "Tucker Chris")
-        XCTAssertEqual(csvEntry?.secondaryLabelTitle, "Date of Birth")
-        XCTAssertEqual(csvEntry?.secondaryLabelSubtitle, dobAsString)
+        let model = viewModel.modelForIndex(IndexPath(row: 1, section: 0))
+        switch model {
+        case .issueCell(let viewModel):
+            let dobAsString =  Date(timeIntervalSinceReferenceDate: 123456789.0).ISO8601Format()
+            XCTAssertEqual(viewModel.mainLabelTitle, "Full Name")
+            XCTAssertEqual(viewModel.mainLabelSubtitle, "Tucker Chris")
+            XCTAssertEqual(viewModel.secondaryLabelTitle, "Date of Birth")
+            XCTAssertEqual(viewModel.secondaryLabelSubtitle, dobAsString)
+        case .none:
+            XCTFail("Couldn't return a cell.")
+        }
+       
         
-        csvEntry = viewModel.viewModelForIndex(2)
-        dobAsString =  Date(timeIntervalSinceReferenceDate: 123456489.0).ISO8601Format()
-        XCTAssertEqual(csvEntry?.mainLabelTitle, "Full Name")
-        XCTAssertEqual(csvEntry?.mainLabelSubtitle, "Griffin Peter")
-        XCTAssertEqual(csvEntry?.secondaryLabelTitle, "Date of Birth")
-        XCTAssertEqual(csvEntry?.secondaryLabelSubtitle, dobAsString)
-        
-        csvEntry = viewModel.viewModelForIndex(3)
-        XCTAssertNil(csvEntry)
+        let secondModel = viewModel.modelForIndex(IndexPath(row: 2, section: 0))
+        switch secondModel {
+        case .issueCell(let viewModel):
+            let dobAsString =  Date(timeIntervalSinceReferenceDate: 123456489.0).ISO8601Format()
+            XCTAssertEqual(viewModel.mainLabelTitle, "Full Name")
+            XCTAssertEqual(viewModel.mainLabelSubtitle, "Griffin Peter")
+            XCTAssertEqual(viewModel.secondaryLabelTitle, "Date of Birth")
+            XCTAssertEqual(viewModel.secondaryLabelSubtitle, dobAsString)
+        case .none:
+            XCTFail("Couldn't return a cell.")
+        }
+
+       let noCSVEntry = viewModel.modelForIndex(IndexPath(row: 3, section: 0))
+        switch noCSVEntry {
+        case .issueCell(_):
+            XCTFail("Returned model where should have been none.")
+        case .none:
+            XCTAssertNil(noCSVEntry)
+        }
     }
 }
