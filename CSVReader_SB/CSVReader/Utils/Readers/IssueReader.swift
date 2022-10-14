@@ -11,25 +11,27 @@ protocol CSVReaderType<ReaderOutput> {
     associatedtype ReaderOutput
     var numberOfColumns: Int { get }
     var loadedCSVData: String? { get set }
-    func readCsv() -> [ReaderOutput]?
+    var rawData: [[String]]? { get }
+    func readRawData()
+    func parseData() -> [ReaderOutput]
     func csvTypeIsSupported() -> Bool
 }
 
 class IssueReader: CSVReaderType {
     typealias ReaderOutput = Issue
+    var rawData: [[String]]?
     var loadedCSVData: String?
-    var numberOfColumns: Int
+    private(set) var numberOfColumns: Int
     
     init(numberOfColumns: Int) {
         self.numberOfColumns = numberOfColumns
     }
     
-    func readCsv() -> [Issue]? {
+    func readRawData() {
         guard let data = self.loadedCSVData else {
-            return nil
+            return
         }
         var result: [[String]] = []
-        var issues: [Issue] = []
         let rows = data.components(separatedBy: .newlines)
         for row in rows {
             let fields = row.replacingOccurrences(of: "\"", with: "").components(separatedBy: ",")
@@ -37,8 +39,24 @@ class IssueReader: CSVReaderType {
                 result.append(fields)
             }
         }
-        result.remove(at: 0)
-        result.forEach { element in
+        
+        switch result.count {
+        case 0...1:
+            self.rawData = nil
+        case 2...:
+            result.remove(at: 0)
+            self.rawData = result
+        default:
+            self.rawData = nil
+        }
+    }
+    
+    func parseData() -> [Issue] {
+        guard let data = rawData else {
+            return []
+        }
+        var issues: [Issue] = []
+        data.forEach { element in
             let issue = Issue(name: element[0],
                               surname: element[1],
                               dateOfBirth: element[3],
@@ -49,6 +67,9 @@ class IssueReader: CSVReaderType {
     }
     
     func csvTypeIsSupported() -> Bool {
-        return (loadedCSVData?.components(separatedBy: ",").count ?? 0) == self.numberOfColumns
+        guard let data = self.rawData?.first else {
+            return false
+        }
+        return data.count == self.numberOfColumns
     }
 }

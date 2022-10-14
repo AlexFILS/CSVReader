@@ -9,7 +9,7 @@ import UIKit
 import UniformTypeIdentifiers
 
 class HomeViewController: BaseViewController {
-
+    
     @IBOutlet weak var openCsvButton: UIButton!
     @IBOutlet weak var loadCsvButton: UIButton!
     var viewModel: HomeViewModelType!
@@ -24,7 +24,9 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func openCsvButtonTapped(_ sender: Any) {
-        guard let data = self.viewModel.csvReader.readCsv() as? [Issue] else {
+        guard self.viewModel.csvReader.csvTypeIsSupported(),
+              let data = self.viewModel.csvReader.parseData() as? [Issue] else {
+            self.showAlert()
             return
         }
         self.viewModel.coordinator?.goToCSVViewer(data: data)
@@ -38,6 +40,15 @@ class HomeViewController: BaseViewController {
     private func initialScreenSetup() {
         self.setupLabels()
         self.openCsvButton.isEnabled = self.viewModel.readyToParseData
+    }
+    
+    private func showAlert() {
+        AlertBuilder(viewController: self)
+            .withTitle(UnsupportedCSVTypeAlert.alertErrorTitle.rawValue)
+            .andMessage(UnsupportedCSVTypeAlert.alertErrorMessage.rawValue)
+            .preferredStyle(.alert)
+            .onSuccessAction(title: UnsupportedCSVTypeAlert.alertButtonOK.rawValue, { _ in })
+            .show()
     }
 }
 

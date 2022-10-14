@@ -7,7 +7,15 @@
 
 import Foundation
 
+// MARK: - Button titles
 enum ButtonTitles: String {
     case findCsvButtonTitle = "Find and load CSV"
     case parseCsvDataButtonTitle = "Parse CSV data"
+}
+
+// MARK: - Alerts
+enum UnsupportedCSVTypeAlert: String {
+    case alertErrorTitle = "Something went wrong!"
+    case alertErrorMessage = "CSV corrupted or not supported."
+    case alertButtonOK = "OK"
 }

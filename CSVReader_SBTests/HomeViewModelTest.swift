@@ -11,6 +11,8 @@ import XCTest
 
      let issueData = "\"First name\",\"Sur name\",\"Issue count\",\"Date of birth\"\r\n\"Theo\",\"Jansen\",5,\"1978-01-02T00:00:00\"\r\n"
      
+     let corruptIssueData = "\"First name\",\"Sur name\",\"Issue count\",\"Date of birth\n" // no rows, just section names
+     
      func testCanLoadIssueData() {
          let coordinator = MainCoordinator(navController: UINavigationController())
          let issueReader = IssueReader(numberOfColumns: 4)
@@ -26,6 +28,18 @@ import XCTest
          homeViewModel.loadCSVUrl(data: nil)
          XCTAssertFalse(homeViewModel.readyToParseData)
          XCTAssertNil(homeViewModel.csvReader.loadedCSVData)
+     }
+     
+     func testCannotLoadIssueData() {
+         let coordinator = MainCoordinator(navController: UINavigationController())
+         let issueReader = IssueReader(numberOfColumns: 4)
+         let homeViewModel = HomeViewModel(csvReader: issueReader, coordinator: coordinator)
+         
+         homeViewModel.loadCSVUrl(data: corruptIssueData)
+         issueReader.readRawData()
+         XCTAssertTrue(homeViewModel.readyToParseData)
+         XCTAssertNotNil(homeViewModel.csvReader.loadedCSVData)
+         XCTAssertFalse(homeViewModel.csvReader.csvTypeIsSupported())
      }
      
      func testCanLoadDifferentReaderType() {

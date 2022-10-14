@@ -8,7 +8,8 @@
 import Foundation
 
 class DummyReader: CSVReaderType {
-    
+    var rawData: [[String]]?
+   
     class DummyReaderOutputObject: CSVDisplayable {
         init(
             store: String,
@@ -33,7 +34,7 @@ class DummyReader: CSVReaderType {
         self.numberOfColumns = numberOfColumns
     }
     
-    func readCsv() -> [DummyReaderOutputObject]? {
+    func parseData() -> [DummyReaderOutputObject] {
         return [
             DummyReaderOutputObject(store: "Fashion Outlet",
                                     city: "Bucharest",
@@ -50,7 +51,9 @@ class DummyReader: CSVReaderType {
         ]
     }
     
+    func readRawData() { }
+    
     func csvTypeIsSupported() -> Bool {
-        return (loadedCSVData?.components(separatedBy: ",").count ?? 0) == self.numberOfColumns
+        return true
     }
 }

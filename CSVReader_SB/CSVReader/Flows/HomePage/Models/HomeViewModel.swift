@@ -24,13 +24,14 @@ class HomeViewModel: HomeViewModelType {
     }
     
     func goToCSVViewer() {
-        if let uiElements = self.csvReader.readCsv() as? [CSVDisplayable] {
+        if let uiElements = self.csvReader.parseData() as? [CSVDisplayable] {
             coordinator?.goToCSVViewer(data: uiElements )
         }
     }
     
     func loadCSVUrl(data: String?) {
         self.csvReader.loadedCSVData = data
+        self.csvReader.readRawData()
     }
     
     var readyToParseData: Bool {
