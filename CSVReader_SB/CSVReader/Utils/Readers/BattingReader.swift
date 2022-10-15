@@ -72,8 +72,6 @@ class BattingReader: CSVReaderType {
         }
         
         switch result.count {
-        case 0...1:
-            self.rawData = nil
         case 2...:
             result.remove(at: 0)
             self.rawData = result
