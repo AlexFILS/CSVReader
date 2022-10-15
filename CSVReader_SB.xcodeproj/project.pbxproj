@@ -17,7 +17,6 @@
 		8E1AF54E28F5C3E30040873C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF54D28F5C3E30040873C /* Coordinator.swift */; };
 		8E1AF55428F5C4630040873C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55328F5C4630040873C /* MainCoordinator.swift */; };
 		8E1AF55828F5C7660040873C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55728F5C7660040873C /* HomeViewModel.swift */; };
-		8E1AF55928F5C7660040873C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55728F5C7660040873C /* HomeViewModel.swift */; };
 		8E1AF55C28F5FE830040873C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55B28F5FE830040873C /* Array+Extension.swift */; };
 		8E1AF55D28F5FE830040873C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55B28F5FE830040873C /* Array+Extension.swift */; };
 		8E1AF56228F722710040873C /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF56128F722710040873C /* Storyboarded.swift */; };
@@ -26,12 +25,7 @@
 		8E1AF56928F745F50040873C /* CSVDataViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF56828F745F50040873C /* CSVDataViewModelTest.swift */; };
 		8E1AF56A28F746A00040873C /* CSVDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF54428F5B9FD0040873C /* CSVDisplayable.swift */; };
 		8E1AF56C28F74D2D0040873C /* CSVDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF54828F5BFD10040873C /* CSVDataViewModel.swift */; };
-		8E1AF56E28F74D570040873C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF54D28F5C3E30040873C /* Coordinator.swift */; };
-		8E1AF56F28F74D660040873C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55328F5C4630040873C /* MainCoordinator.swift */; };
-		8E1AF57028F74D840040873C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
-		8E1AF57128F74D9F0040873C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF56328F722AD0040873C /* BaseViewController.swift */; };
 		8E1AF57228F74DC40040873C /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF56128F722710040873C /* Storyboarded.swift */; };
-		8E1AF57328F74E250040873C /* CSVDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF53A28F5B4080040873C /* CSVDataViewController.swift */; };
 		8E1AF57428F74E3B0040873C /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF56628F72BD50040873C /* UIStoryboard+Extension.swift */; };
 		8E1AF57528F74F250040873C /* CSVDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF53E28F5B74E0040873C /* CSVDataCell.swift */; };
 		8E1AF57A28F855A50040873C /* IssueReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF57928F855A50040873C /* IssueReader.swift */; };
@@ -53,6 +47,19 @@
 		8E1AF59728F9DA670040873C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59628F9DA670040873C /* UIView+Extension.swift */; };
 		8E1AF59928F9DA920040873C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59828F9DA920040873C /* BlurView.swift */; };
 		8E1AF59B28F9DE150040873C /* BattingReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59A28F9DE150040873C /* BattingReader.swift */; };
+		8E1AF5A628FB1D680040873C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF56328F722AD0040873C /* BaseViewController.swift */; };
+		8E1AF5A728FB1E8B0040873C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59828F9DA920040873C /* BlurView.swift */; };
+		8E1AF5A828FB1E940040873C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
+		8E1AF5A928FB1E9C0040873C /* CSVDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF53A28F5B4080040873C /* CSVDataViewController.swift */; };
+		8E1AF5AD28FB1FBF0040873C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55328F5C4630040873C /* MainCoordinator.swift */; };
+		8E1AF5AE28FB1FD50040873C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF55728F5C7660040873C /* HomeViewModel.swift */; };
+		8E1AF5AF28FB1FEA0040873C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF54D28F5C3E30040873C /* Coordinator.swift */; };
+		8E1AF5B028FB1FF80040873C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
+		8E1AF5B128FB20060040873C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF56328F722AD0040873C /* BaseViewController.swift */; };
+		8E1AF5B228FB20160040873C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59828F9DA920040873C /* BlurView.swift */; };
+		8E1AF5B328FB20220040873C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59628F9DA670040873C /* UIView+Extension.swift */; };
+		8E1AF5B428FB20240040873C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59628F9DA670040873C /* UIView+Extension.swift */; };
+		8E1AF5B528FB20310040873C /* CSVDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF53A28F5B4080040873C /* CSVDataViewController.swift */; };
 		8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685528F5AD6800C128DC /* AppDelegate.swift */; };
 		8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
 		8EFD685D28F5AD6800C128DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685B28F5AD6800C128DC /* Home.storyboard */; };
@@ -507,24 +514,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1AF5AD28FB1FBF0040873C /* MainCoordinator.swift in Sources */,
+				8E1AF5AE28FB1FD50040873C /* HomeViewModel.swift in Sources */,
 				8E1AF56928F745F50040873C /* CSVDataViewModelTest.swift in Sources */,
 				8E1AF57528F74F250040873C /* CSVDataCell.swift in Sources */,
 				8E1AF54628F5B9FD0040873C /* CSVDisplayable.swift in Sources */,
-				8E1AF56F28F74D660040873C /* MainCoordinator.swift in Sources */,
+				8E1AF5B128FB20060040873C /* BaseViewController.swift in Sources */,
 				8E1AF58528F95C820040873C /* HomeViewModelTest.swift in Sources */,
+				8E1AF5AF28FB1FEA0040873C /* Coordinator.swift in Sources */,
 				8E1AF58C28F975D70040873C /* BaseAlert.swift in Sources */,
 				8E1AF58F28F976090040873C /* AlertAction.swift in Sources */,
+				8E1AF5B328FB20220040873C /* UIView+Extension.swift in Sources */,
+				8E1AF5B528FB20310040873C /* CSVDataViewController.swift in Sources */,
 				8E1AF57228F74DC40040873C /* Storyboarded.swift in Sources */,
 				8E1AF58328F952040040873C /* DummyReader.swift in Sources */,
-				8E1AF57128F74D9F0040873C /* BaseViewController.swift in Sources */,
 				8E1AF55D28F5FE830040873C /* Array+Extension.swift in Sources */,
-				8E1AF55928F5C7660040873C /* HomeViewModel.swift in Sources */,
-				8E1AF57028F74D840040873C /* HomeViewController.swift in Sources */,
-				8E1AF57328F74E250040873C /* CSVDataViewController.swift in Sources */,
 				8E1AF56C28F74D2D0040873C /* CSVDataViewModel.swift in Sources */,
-				8E1AF56E28F74D570040873C /* Coordinator.swift in Sources */,
 				8E1AF59228F976310040873C /* AlertBuilder.swift in Sources */,
+				8E1AF5B228FB20160040873C /* BlurView.swift in Sources */,
 				8E1AF58828F95D660040873C /* Constants.swift in Sources */,
+				8E1AF5B028FB1FF80040873C /* HomeViewController.swift in Sources */,
 				8E1AF58028F884AE0040873C /* IssueReader.swift in Sources */,
 				8E1AF57F28F8837E0040873C /* IssueReaderTest.swift in Sources */,
 				8E1AF57428F74E3B0040873C /* UIStoryboard+Extension.swift in Sources */,
@@ -536,10 +545,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1AF5A628FB1D680040873C /* BaseViewController.swift in Sources */,
 				8EFD687728F5AD6A00C128DC /* CSVReader_SBUITests.swift in Sources */,
 				8E1AF54028F5B74E0040873C /* CSVDataCell.swift in Sources */,
+				8E1AF5B428FB20240040873C /* UIView+Extension.swift in Sources */,
+				8E1AF5A928FB1E9C0040873C /* CSVDataViewController.swift in Sources */,
 				8EFD687928F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift in Sources */,
 				8E1AF56A28F746A00040873C /* CSVDisplayable.swift in Sources */,
+				8E1AF5A828FB1E940040873C /* HomeViewController.swift in Sources */,
+				8E1AF5A728FB1E8B0040873C /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

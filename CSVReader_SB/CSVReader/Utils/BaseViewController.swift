@@ -10,10 +10,6 @@ import UIKit
 
 class BaseViewController: UIViewController, Storyboarded {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func showLoadingIndicator() {
         self.view.showBlurLoader()
     }

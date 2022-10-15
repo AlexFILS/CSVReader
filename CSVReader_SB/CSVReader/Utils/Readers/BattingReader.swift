@@ -8,9 +8,9 @@
 import Foundation
 
 /*
-Used to test a large CSV file (over 6MB) included in the test files in the git repo
-Usage: Inject this reader in the HomeViewModel, init with the number of columns, and change the cast type to [Batting]
-*/
+ Used to test a large CSV file (over 6MB) included in the test files in the git repo
+ Usage: Inject this reader in the HomeViewModel, init with the number of columns, and change the cast type to [Batting]
+ */
 
 class Batting: CSVDisplayable {
     
@@ -58,7 +58,13 @@ class BattingReader: CSVReaderType {
         self.numberOfColumns = numberOfColumns
     }
     
-    func readRawData() {
+    func readAndParseData() async -> [ReaderOutput] {
+        await self.readRawData()
+        let result = await parseData()
+        return result
+    }
+    
+    func readRawData() async {
         guard let data = self.loadedCSVData else {
             return
         }
@@ -80,24 +86,19 @@ class BattingReader: CSVReaderType {
         }
     }
     
-    func parseData() -> [Batting] {
+    func parseData() async -> [Batting] {
         guard let data = rawData else {
             return []
         }
         var battings: [Batting] = []
         data.forEach { csvEntry in
-            let batting = Batting(
-                player: csvEntry[0], year: csvEntry[1], stint: csvEntry[2], team: csvEntry[3], igid: csvEntry[4], gValue: csvEntry[5], abValue: csvEntry[6], rValue: csvEntry[7], hValue: csvEntry[8], b2Value: csvEntry[9], b3Value: csvEntry[10], hrValue: csvEntry[11], rbiValue: csvEntry[12], sbValue: csvEntry[13], csValue: csvEntry[14], bbValue: csvEntry[15], soValue: csvEntry[16], ibbValue: csvEntry[17], hbbValue: csvEntry[18], shValue: csvEntry[19], sfValue: csvEntry[20], gidp: csvEntry[21]
-            )
-            battings.append(batting)
+            if element.count == self.numberOfColumns {
+                let batting = Batting(
+                    player: csvEntry[0], year: csvEntry[1], stint: csvEntry[2], team: csvEntry[3], igid: csvEntry[4], gValue: csvEntry[5], abValue: csvEntry[6], rValue: csvEntry[7], hValue: csvEntry[8], b2Value: csvEntry[9], b3Value: csvEntry[10], hrValue: csvEntry[11], rbiValue: csvEntry[12], sbValue: csvEntry[13], csValue: csvEntry[14], bbValue: csvEntry[15], soValue: csvEntry[16], ibbValue: csvEntry[17], hbbValue: csvEntry[18], shValue: csvEntry[19], sfValue: csvEntry[20], gidp: csvEntry[21]
+                )
+                battings.append(batting)
+            }
         }
         return battings
-    }
-    
-    func csvTypeIsSupported() -> Bool {
-        guard let data = self.rawData?.first else {
-            return false
-        }
-        return data.count == self.numberOfColumns
     }
 }

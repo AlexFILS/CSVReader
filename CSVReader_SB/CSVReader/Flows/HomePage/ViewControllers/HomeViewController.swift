@@ -25,18 +25,30 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func openCsvButtonTapped(_ sender: Any) {
-        self.showLoadingIndicator()
-        guard self.viewModel.csvReader.csvTypeIsSupported(),
-              let data = self.viewModel.csvReader.parseData() as? [Issue] else {
-            self.hideLoadingIndicator()
-            self.showAlert()
-            return
+        Task { [weak self] in
+            await self?.returnCompiledData()
         }
-        self.hideLoadingIndicator()
-        self.viewModel.coordinator?.goToCSVViewer(data: data)
     }
     
     // MARK: - Functions
+    
+    private func returnCompiledData() async {
+        self.showLoadingIndicator()
+//        guard self.viewModel.csvReader.csvTypeIsSupported() else {
+//            self.hideLoadingIndicator()
+//            self.showAlert()
+//            return
+//        }
+        if let data = await self.viewModel.csvReader.readAndParseData() as? [Issue],
+           data.count > 0 {
+            self.hideLoadingIndicator()
+            self.viewModel.coordinator?.goToCSVViewer(data: data)
+        } else {
+            self.hideLoadingIndicator()
+            self.showAlert()
+        }
+    }
+    
     private func setupLabels() {
         self.openCsvButton.setTitle(ButtonTitles.parseCsvDataButtonTitle.rawValue, for: .normal)
         self.loadCsvButton.setTitle(ButtonTitles.findCsvButtonTitle.rawValue, for: .normal)

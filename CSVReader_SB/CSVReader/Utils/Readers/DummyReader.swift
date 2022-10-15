@@ -8,6 +8,7 @@
 import Foundation
 
 class DummyReader: CSVReaderType {
+    
     var rawData: [[String]]?
    
     class DummyReaderOutputObject: CSVDisplayable {
@@ -36,7 +37,13 @@ class DummyReader: CSVReaderType {
     }
     
     // MARK: - Functions
-    func parseData() -> [DummyReaderOutputObject] {
+    
+    func readAndParseData() async -> [ReaderOutput] {
+        let result = await parseData()
+        return result
+    }
+    
+    func parseData() async -> [DummyReaderOutputObject] {
         return [
             DummyReaderOutputObject(store: "Fashion Outlet",
                                     city: "Bucharest",
@@ -51,11 +58,5 @@ class DummyReader: CSVReaderType {
                                     country: "Romania",
                                     availability: "Mon-Fri 800h-2000h")
         ]
-    }
-    
-    func readRawData() { }
-    
-    func csvTypeIsSupported() -> Bool {
-        return true
     }
 }

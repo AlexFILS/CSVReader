@@ -12,9 +12,7 @@ protocol CSVReaderType<ReaderOutput> {
     var numberOfColumns: Int { get }
     var loadedCSVData: String? { get set }
     var rawData: [[String]]? { get }
-    func readRawData()
-    func parseData() -> [ReaderOutput]
-    func csvTypeIsSupported() -> Bool
+    func readAndParseData() async -> [ReaderOutput]
 }
 
 class IssueReader: CSVReaderType {
@@ -29,7 +27,14 @@ class IssueReader: CSVReaderType {
     }
     
     // MARK: - Functions
-    func readRawData() {
+    
+    func readAndParseData() async -> [ReaderOutput] {
+        await self.readRawData()
+        let result = await parseData()
+        return result
+    }
+    
+    func readRawData() async {
         guard let data = self.loadedCSVData else {
             return
         }
@@ -51,25 +56,20 @@ class IssueReader: CSVReaderType {
         }
     }
     
-    func parseData() -> [Issue] {
-        guard let data = rawData else {
+    func parseData() async -> [Issue] {
+        guard let data = self.rawData else {
             return []
         }
         var issues: [Issue] = []
         data.forEach { element in
-            let issue = Issue(name: element[0],
-                              surname: element[1],
-                              dateOfBirth: element[3],
-                              issueCount: element[2])
-            issues.append(issue)
+            if element.count == self.numberOfColumns {
+                let issue = Issue(name: element[0],
+                                       surname: element[1],
+                                       dateOfBirth: element[3],
+                                       issueCount: element[2])
+                issues.append(issue)
+            }
         }
         return issues
-    }
-    
-    func csvTypeIsSupported() -> Bool {
-        guard let data = self.rawData?.first else {
-            return false
-        }
-        return data.count == self.numberOfColumns
     }
 }

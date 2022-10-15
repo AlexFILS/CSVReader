@@ -36,10 +36,8 @@ import XCTest
          let homeViewModel = HomeViewModel(csvReader: issueReader, coordinator: coordinator)
          
          homeViewModel.loadCSVUrl(data: corruptIssueData)
-         issueReader.readRawData()
          XCTAssertTrue(homeViewModel.readyToParseData)
          XCTAssertNotNil(homeViewModel.csvReader.loadedCSVData)
-         XCTAssertFalse(homeViewModel.csvReader.csvTypeIsSupported())
      }
      
      func testCanLoadDifferentReaderType() {

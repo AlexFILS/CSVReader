@@ -16,6 +16,6 @@ enum ButtonTitles: String {
 // MARK: - Alerts
 enum UnsupportedCSVTypeAlert: String {
     case alertErrorTitle = "Something went wrong!"
-    case alertErrorMessage = "CSV corrupted or not supported."
+    case alertErrorMessage = "CSV empty, corrupt or not supported."
     case alertButtonOK = "OK"
 }
