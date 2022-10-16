@@ -60,6 +60,8 @@
 		8E1AF5B328FB20220040873C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59628F9DA670040873C /* UIView+Extension.swift */; };
 		8E1AF5B428FB20240040873C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF59628F9DA670040873C /* UIView+Extension.swift */; };
 		8E1AF5B528FB20310040873C /* CSVDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF53A28F5B4080040873C /* CSVDataViewController.swift */; };
+		8E1AF5B728FC4F190040873C /* CSVCorruptDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF5B628FC4F190040873C /* CSVCorruptDataCell.swift */; };
+		8E1AF5B828FC4F190040873C /* CSVCorruptDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF5B628FC4F190040873C /* CSVCorruptDataCell.swift */; };
 		8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685528F5AD6800C128DC /* AppDelegate.swift */; };
 		8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
 		8EFD685D28F5AD6800C128DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685B28F5AD6800C128DC /* Home.storyboard */; };
@@ -112,6 +114,7 @@
 		8E1AF59628F9DA670040873C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8E1AF59828F9DA920040873C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		8E1AF59A28F9DE150040873C /* BattingReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattingReader.swift; sourceTree = "<group>"; };
+		8E1AF5B628FC4F190040873C /* CSVCorruptDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVCorruptDataCell.swift; sourceTree = "<group>"; };
 		8EFD685228F5AD6800C128DC /* CSVReader_SB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVReader_SB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD685528F5AD6800C128DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD685928F5AD6800C128DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1AF53E28F5B74E0040873C /* CSVDataCell.swift */,
+				8E1AF5B628FC4F190040873C /* CSVCorruptDataCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -492,6 +496,7 @@
 				8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */,
 				8E1AF55C28F5FE830040873C /* Array+Extension.swift in Sources */,
 				8E1AF56428F722AD0040873C /* BaseViewController.swift in Sources */,
+				8E1AF5B728FC4F190040873C /* CSVCorruptDataCell.swift in Sources */,
 				8E1AF58B28F975D70040873C /* BaseAlert.swift in Sources */,
 				8E1AF56228F722710040873C /* Storyboarded.swift in Sources */,
 				8E1AF55828F5C7660040873C /* HomeViewModel.swift in Sources */,
@@ -522,6 +527,7 @@
 				8E1AF5B128FB20060040873C /* BaseViewController.swift in Sources */,
 				8E1AF58528F95C820040873C /* HomeViewModelTest.swift in Sources */,
 				8E1AF5AF28FB1FEA0040873C /* Coordinator.swift in Sources */,
+				8E1AF5B828FC4F190040873C /* CSVCorruptDataCell.swift in Sources */,
 				8E1AF58C28F975D70040873C /* BaseAlert.swift in Sources */,
 				8E1AF58F28F976090040873C /* AlertAction.swift in Sources */,
 				8E1AF5B328FB20220040873C /* UIView+Extension.swift in Sources */,

@@ -92,7 +92,7 @@ class BattingReader: CSVReaderType {
         }
         var battings: [Batting] = []
         data.forEach { csvEntry in
-            if element.count == self.numberOfColumns {
+            if csvEntry.count == self.numberOfColumns {
                 let batting = Batting(
                     player: csvEntry[0], year: csvEntry[1], stint: csvEntry[2], team: csvEntry[3], igid: csvEntry[4], gValue: csvEntry[5], abValue: csvEntry[6], rValue: csvEntry[7], hValue: csvEntry[8], b2Value: csvEntry[9], b3Value: csvEntry[10], hrValue: csvEntry[11], rbiValue: csvEntry[12], sbValue: csvEntry[13], csValue: csvEntry[14], bbValue: csvEntry[15], soValue: csvEntry[16], ibbValue: csvEntry[17], hbbValue: csvEntry[18], shValue: csvEntry[19], sfValue: csvEntry[20], gidp: csvEntry[21]
                 )

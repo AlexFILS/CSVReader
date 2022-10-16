@@ -19,3 +19,10 @@ enum UnsupportedCSVTypeAlert: String {
     case alertErrorMessage = "CSV empty, corrupt or not supported."
     case alertButtonOK = "OK"
 }
+
+
+// MARK: - Cells
+
+enum CorruptCell: String {
+case corruptDataLabel = "Corrupt CSV entry"
+}

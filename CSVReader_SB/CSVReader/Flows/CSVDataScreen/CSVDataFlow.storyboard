@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CSVDataCell" id="j4r-WS-YPi" customClass="CSVDataCell" customModule="CSVReader_SB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CSVDataCell" id="j4r-WS-YPi" customClass="CSVDataCell" customModule="CSVReader_SB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j4r-WS-YPi" id="U6R-u3-IVs">
@@ -79,6 +79,29 @@
                                             <outlet property="mainLabelTitle" destination="uIM-ds-hzh" id="UMg-Fn-SzW"/>
                                             <outlet property="secondaryLabelDescription" destination="cca-WC-Eds" id="amh-SI-XGq"/>
                                             <outlet property="secondaryLabelTitle" destination="HHg-hC-twa" id="Eiw-ga-K9n"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CSVCorruptDataCell" id="1lL-5t-YDk" customClass="CSVCorruptDataCell" customModule="CSVReader_SB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="140" width="390" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1lL-5t-YDk" id="0oT-9E-4ta">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1A-yM-PUp">
+                                                    <rect key="frame" x="174.33333333333334" y="35" width="41.333333333333343" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s1A-yM-PUp" firstAttribute="centerY" secondItem="0oT-9E-4ta" secondAttribute="centerY" id="6Vb-yk-jlJ"/>
+                                                <constraint firstItem="s1A-yM-PUp" firstAttribute="centerX" secondItem="0oT-9E-4ta" secondAttribute="centerX" id="9Y7-8R-sGn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="corruptDataLabel" destination="s1A-yM-PUp" id="eHA-T5-vNG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
