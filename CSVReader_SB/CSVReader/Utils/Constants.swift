@@ -27,3 +27,20 @@ enum UnsupportedCSVTypeAlert: String {
 enum CellIdentifiers: String {
     case issueCell = "CSVDataCell"
 }
+
+// MARK: - HomeViewModel
+
+enum HomeScreenLiterals: String {
+    case csvLabelNoCSVLoaded = "No CSV loaded."
+    case csvSelected = "Selected CSV: %@"
+    case csvSelectedDefaultLabel = "A CSV was selected."
+}
+
+
+// MARK: - Identifiers
+
+enum HomeScreenIdentifiers: String {
+    case loadedCSVLabel
+    case loadCSVButton
+    case openCSVButton
+}

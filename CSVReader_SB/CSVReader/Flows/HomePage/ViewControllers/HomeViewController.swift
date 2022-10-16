@@ -12,6 +12,7 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var openCsvButton: UIButton!
     @IBOutlet weak var loadCsvButton: UIButton!
+    @IBOutlet weak var loadedCsvLabel: UILabel!
     var viewModel: HomeViewModelType!
     
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class HomeViewController: BaseViewController {
     private func setupLabels() {
         self.openCsvButton.setTitle(ButtonTitles.parseCsvDataButtonTitle.rawValue, for: .normal)
         self.loadCsvButton.setTitle(ButtonTitles.findCsvButtonTitle.rawValue, for: .normal)
+        self.loadedCsvLabel.text = HomeScreenLiterals.csvLabelNoCSVLoaded.rawValue
     }
     
     private func initialScreenSetup() {
@@ -73,6 +75,7 @@ extension HomeViewController: UIDocumentPickerDelegate {
             self.openCsvButton.isEnabled = self.viewModel.readyToParseData
             return
         }
+        self.loadedCsvLabel.text = self.viewModel.getCSVName(fromPath: url)
         self.viewModel.loadCSVUrl(data: data)
         self.openCsvButton.isEnabled = self.viewModel.readyToParseData
     }

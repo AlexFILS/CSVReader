@@ -12,10 +12,15 @@ protocol HomeViewModelType {
     var coordinator: MainCoordinator? {get }
     var readyToParseData: Bool { get }
     func loadCSVUrl(data: String?)
+    func getCSVName(fromPath csvPath: URL) -> String
 }
 class HomeViewModel: HomeViewModelType {
-    private(set )var csvReader: any CSVReaderType
+    private(set) var csvReader: any CSVReaderType
     weak var coordinator : MainCoordinator?
+    
+    var readyToParseData: Bool {
+        self.csvReader.loadedCSVData != nil
+    }
     
     // MARK: - Init
     init(csvReader: any CSVReaderType, coordinator: MainCoordinator?) {
@@ -27,7 +32,11 @@ class HomeViewModel: HomeViewModelType {
         self.csvReader.loadedCSVData = data
     }
     
-    var readyToParseData: Bool {
-        self.csvReader.loadedCSVData != nil
+    func getCSVName(fromPath csvPath: URL) -> String {
+        if let csvName = csvPath.path.components(separatedBy: "/").last {
+            return String(format: HomeScreenLiterals.csvSelected.rawValue, csvName)
+        } else {
+            return HomeScreenLiterals.csvSelectedDefaultLabel.rawValue
+        }
     }
 }
