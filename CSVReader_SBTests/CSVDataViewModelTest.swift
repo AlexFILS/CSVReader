@@ -14,10 +14,12 @@ class CSVDataViewModelTest: XCTestCase {
     // Use a random class that may have data loaded from a CSV and cand be displayed in the csv reader table
     class Person: CSVDisplayable {
         init(name: String, surname: String, dateOfBirth: Date) {
-            super.init(mainLabelTitle: "Full Name",
-                       mainLabelSubtitle: name + " " + surname,
-                       secondaryLabelTitle: "Date of Birth",
-                       secondaryLabelSubtitle: dateOfBirth.ISO8601Format())
+            super.init(
+                mainLabelTitle: "Full Name",
+                mainLabelSubtitle: name + " " + surname,
+                secondaryLabelTitle: "Date of Birth",
+                secondaryLabelSubtitle: dateOfBirth.ISO8601Format()
+            )
         }
     }
     
@@ -57,7 +59,7 @@ class CSVDataViewModelTest: XCTestCase {
         case .none:
             XCTFail("Couldn't return a cell.")
         }
-       
+        
         
         let secondModel = viewModel.modelForIndex(IndexPath(row: 2, section: 0))
         switch secondModel {
@@ -70,8 +72,8 @@ class CSVDataViewModelTest: XCTestCase {
         case .none:
             XCTFail("Couldn't return a cell.")
         }
-
-       let noCSVEntry = viewModel.modelForIndex(IndexPath(row: 3, section: 0))
+        
+        let noCSVEntry = viewModel.modelForIndex(IndexPath(row: 3, section: 0))
         switch noCSVEntry {
         case .issueCell(_):
             XCTFail("Returned model where should have been none.")

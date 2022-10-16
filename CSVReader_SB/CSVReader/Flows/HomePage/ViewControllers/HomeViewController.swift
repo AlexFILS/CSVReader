@@ -34,11 +34,6 @@ class HomeViewController: BaseViewController {
     
     private func returnCompiledData() async {
         self.showLoadingIndicator()
-//        guard self.viewModel.csvReader.csvTypeIsSupported() else {
-//            self.hideLoadingIndicator()
-//            self.showAlert()
-//            return
-//        }
         if let data = await self.viewModel.csvReader.readAndParseData() as? [Issue],
            data.count > 0 {
             self.hideLoadingIndicator()

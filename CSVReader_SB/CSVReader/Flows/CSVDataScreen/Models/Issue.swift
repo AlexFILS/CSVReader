@@ -8,17 +8,20 @@
 import Foundation
 
 class Issue: CSVDisplayable, Equatable {
-    init(name: String,
-         surname: String,
-         dateOfBirth: String,
-         issueCount: String) {
+    init(
+        name: String,
+        surname: String,
+        dateOfBirth: String,
+        issueCount: String
+    ) {
         
-        super.init(mainLabelTitle: name + " " + surname,
-                   mainLabelSubtitle: dateOfBirth,
-                   secondaryLabelTitle: "Issues",
-                   secondaryLabelSubtitle:  issueCount)
+        super.init(
+            mainLabelTitle: name + " " + surname,
+            mainLabelSubtitle: dateOfBirth,
+            secondaryLabelTitle: "Issues",
+            secondaryLabelSubtitle:  issueCount
+        )
     }
-    
     
     static func == (lhs: Issue, rhs: Issue) -> Bool {
         return lhs.secondaryLabelSubtitle == rhs.secondaryLabelSubtitle &&

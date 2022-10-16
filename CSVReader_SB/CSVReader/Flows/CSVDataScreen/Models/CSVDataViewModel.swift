@@ -7,16 +7,21 @@
 
 import Foundation
 
+enum CellType {
+    case issueCell(cellViewModel: CSVDisplayableType)
+}
+
 protocol CSVDataViewModelType {
+    associatedtype ContainedDataType
     var coordinator: MainCoordinator? { get }
+    func numberOfRows(inSection: Int) -> Int 
+    func modelForIndex(_ indexPath: IndexPath) -> CellType?
+    
 }
 
 class CSVDataViewModel: CSVDataViewModelType {
+    typealias CellTypeEnum = CellType
     typealias ContainedDataType = CSVDisplayable
-    
-    public enum CellType {
-        case issueCell(cellViewModel: ContainedDataType)
-    }
     
     public struct Section {
         let items: [CellType]
@@ -26,11 +31,12 @@ class CSVDataViewModel: CSVDataViewModelType {
     private var sections = [Section]()
     
     // MARK: - Init
+    
     init(data: [ContainedDataType]) {
         self.generateSections(data: data)
     }
     
-    func modelForIndex(_ indexPath: IndexPath) -> CellType? {
+    func modelForIndex(_ indexPath: IndexPath) -> CellTypeEnum? {
         if let section = self.sections.elementAtPosition(indexPath.section),
            let model = section.items.elementAtPosition(indexPath.row) {
             return model
@@ -43,7 +49,7 @@ class CSVDataViewModel: CSVDataViewModelType {
         return self.sections.elementAtPosition(inSection)?.items.count ?? 0
     }
     
-    func generateSections(data: [ContainedDataType]) {
+    private func generateSections(data: [ContainedDataType]) {
         var sections = [Section]()
         if let issueSection = self.generateIssuesSection(data: data) {
             sections.append(issueSection)
@@ -51,7 +57,7 @@ class CSVDataViewModel: CSVDataViewModelType {
         self.sections = sections
     }
     
-    func generateIssuesSection(data: [ContainedDataType]) -> Section? {
+    private func generateIssuesSection(data: [ContainedDataType]) -> Section? {
         var cells = [CellType]()
         data.forEach { element in
             cells.append(.issueCell(cellViewModel: element))

@@ -21,6 +21,7 @@ class CSVDisplayable: CSVDisplayableType {
     let secondaryLabelSubtitle: String
     
     // MARK: - Init
+    
     init(mainLabelTitle: String, mainLabelSubtitle: String, secondaryLabelTitle: String, secondaryLabelSubtitle: String) {
         self.mainLabelTitle = mainLabelTitle
         self.mainLabelSubtitle = mainLabelSubtitle

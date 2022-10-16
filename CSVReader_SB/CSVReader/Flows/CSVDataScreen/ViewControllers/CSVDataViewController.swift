@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 
 class CSVDataViewController: BaseViewController {
-    var viewModel: CSVDataViewModel!
+    var viewModel: (any CSVDataViewModelType)!
     @IBOutlet weak var csvDataTableView: UITableView!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         self.csvDataTableView.dataSource = self
@@ -20,18 +22,22 @@ class CSVDataViewController: BaseViewController {
         self.viewModel?.coordinator?.popController()
     }
     
+    // MARK: - Button ACtions
+    
     @IBAction func backtapped(_ sender: Any) {
         self.viewModel?.coordinator?.popController()
     }
 }
 
+// MARK: - TableViewDataSource
+
 extension CSVDataViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel?.numberOfRows(inSection: section) ?? 0
+        return self.viewModel.numberOfRows(inSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CSVDataCell") as? CSVDataCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.issueCell.rawValue) as? CSVDataCell,
               let item = self.viewModel.modelForIndex(indexPath) else {
             return UITableViewCell()
         }

@@ -57,7 +57,7 @@ class IssueReaderTest: XCTestCase {
         let parsedIssues = await reader.parseData()
         XCTAssertEqual(parsedIssues.count, 1)
     }
-        
+    
     func testDataHasNoEntriesExceptRowNames() async {
         let reader = IssueReader(numberOfColumns: 4)
         let data = "\"First name\",\"Sur name\",\"Issue count\",\"Date of birth\"\r"
@@ -74,10 +74,12 @@ class IssueReaderTest: XCTestCase {
         await reader.readRawData()
         let parsedIssues = await reader.parseData()
         if let issue = parsedIssues.first {
-            let expectedIssue = Issue(name: "Theo",
-                                      surname: "Jansen",
-                                      dateOfBirth: "1978-01-02T00:00:00",
-                                      issueCount: "5")
+            let expectedIssue = Issue(
+                name: "Theo",
+                surname: "Jansen",
+                dateOfBirth: "1978-01-02T00:00:00",
+                issueCount: "5"
+            )
             XCTAssertEqual(issue, expectedIssue)
         } else {
             XCTFail("Did not return an issue object.")

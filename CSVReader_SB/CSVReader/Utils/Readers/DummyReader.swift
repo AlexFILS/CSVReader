@@ -10,7 +10,7 @@ import Foundation
 class DummyReader: CSVReaderType {
     
     var rawData: [[String]]?
-   
+    
     class DummyReaderOutputObject: CSVDisplayable {
         init(
             store: String,
@@ -45,18 +45,24 @@ class DummyReader: CSVReaderType {
     
     func parseData() async -> [DummyReaderOutputObject] {
         return [
-            DummyReaderOutputObject(store: "Fashion Outlet",
-                                    city: "Bucharest",
-                                    country: "Romania",
-                                    availability: "Mon-Sun 7:00-20:00"),
-            DummyReaderOutputObject(store: "Pet Shop",
-                                    city: "Iasi",
-                                    country: "Romania",
-                                    availability: "Mon-Fri"),
-            DummyReaderOutputObject(store: "House&Garden",
-                                    city: "Constanta",
-                                    country: "Romania",
-                                    availability: "Mon-Fri 800h-2000h")
+            DummyReaderOutputObject(
+                store: "Fashion Outlet",
+                city: "Bucharest",
+                country: "Romania",
+                availability: "Mon-Sun 7:00-20:00"
+            ),
+            DummyReaderOutputObject(
+                store: "Pet Shop",
+                city: "Iasi",
+                country: "Romania",
+                availability: "Mon-Fri"
+            ),
+            DummyReaderOutputObject(
+                store: "House&Garden",
+                city: "Constanta",
+                country: "Romania",
+                availability: "Mon-Fri 800h-2000h"
+            )
         ]
     }
 }
