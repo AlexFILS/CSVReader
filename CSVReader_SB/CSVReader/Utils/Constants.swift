@@ -40,7 +40,15 @@ enum HomeScreenLiterals: String {
 // MARK: - Identifiers
 
 enum HomeScreenIdentifiers: String {
-    case loadedCSVLabel
-    case loadCSVButton
-    case openCSVButton
+    case openCSVButtonId
+    case loadCSVButtonId
+    case csvStatusLabelId
+}
+
+enum CSVDataScreenIdentifiers: String {
+    case csvDataCellId = "CSVDataCellId"
+    case mainLabelTitleId
+    case mainLabelDescriptionId
+    case secondaryLabelTitleId
+    case secondaryLabelDescriptionId
 }

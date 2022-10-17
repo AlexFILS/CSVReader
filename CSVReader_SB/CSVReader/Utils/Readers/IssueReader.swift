@@ -14,6 +14,7 @@ class IssueReader: CSVReaderType {
     private(set) var numberOfColumns: Int
     
     // MARK: - Init
+    
     init(numberOfColumns: Int) {
         self.numberOfColumns = numberOfColumns
     }
@@ -26,7 +27,7 @@ class IssueReader: CSVReaderType {
         return result
     }
     
-    func readRawData() async {
+    private func readRawData() async {
         guard let data = self.loadedCSVData else {
             return
         }
@@ -48,7 +49,7 @@ class IssueReader: CSVReaderType {
         }
     }
     
-    func parseData() async -> [Issue] {
+    private func parseData() async -> [Issue] {
         guard let data = self.rawData else {
             return []
         }
@@ -56,9 +57,9 @@ class IssueReader: CSVReaderType {
         data.forEach { element in
             if element.count == self.numberOfColumns {
                 let issue = Issue(name: element[0],
-                                       surname: element[1],
-                                       dateOfBirth: element[3],
-                                       issueCount: element[2])
+                                  surname: element[1],
+                                  dateOfBirth: element[3],
+                                  issueCount: element[2])
                 issues.append(issue)
             }
         }

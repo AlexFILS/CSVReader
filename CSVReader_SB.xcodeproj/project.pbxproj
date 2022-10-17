@@ -92,12 +92,12 @@
 		8E1AF5E628FD97640040873C /* CSVReaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF5E528FD97640040873C /* CSVReaderType.swift */; };
 		8E1AF5E728FD97640040873C /* CSVReaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF5E528FD97640040873C /* CSVReaderType.swift */; };
 		8E1AF5E828FD97640040873C /* CSVReaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF5E528FD97640040873C /* CSVReaderType.swift */; };
+		8E1AF5EA28FDDADC0040873C /* CSVReaderScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AF5E928FDDADC0040873C /* CSVReaderScreenTest.swift */; };
 		8EFD685628F5AD6800C128DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685528F5AD6800C128DC /* AppDelegate.swift */; };
 		8EFD685A28F5AD6800C128DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD685928F5AD6800C128DC /* HomeViewController.swift */; };
 		8EFD685D28F5AD6800C128DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685B28F5AD6800C128DC /* Home.storyboard */; };
 		8EFD685F28F5AD6A00C128DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD685E28F5AD6A00C128DC /* Assets.xcassets */; };
 		8EFD686228F5AD6A00C128DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD686028F5AD6A00C128DC /* LaunchScreen.storyboard */; };
-		8EFD687728F5AD6A00C128DC /* CSVReader_SBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD687628F5AD6A00C128DC /* CSVReader_SBUITests.swift */; };
 		8EFD687928F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD687828F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +150,7 @@
 		8E1AF5D728FD8DA40040873C /* HomeViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelType.swift; sourceTree = "<group>"; };
 		8E1AF5DC28FD8DC70040873C /* CSVCapableCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVCapableCoordinatorType.swift; sourceTree = "<group>"; };
 		8E1AF5E528FD97640040873C /* CSVReaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReaderType.swift; sourceTree = "<group>"; };
+		8E1AF5E928FDDADC0040873C /* CSVReaderScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReaderScreenTest.swift; sourceTree = "<group>"; };
 		8EFD685228F5AD6800C128DC /* CSVReader_SB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVReader_SB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD685528F5AD6800C128DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD685928F5AD6800C128DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		8EFD686328F5AD6A00C128DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EFD686828F5AD6A00C128DC /* CSVReader_SBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVReader_SBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD687228F5AD6A00C128DC /* CSVReader_SBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVReader_SBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EFD687628F5AD6A00C128DC /* CSVReader_SBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader_SBUITests.swift; sourceTree = "<group>"; };
 		8EFD687828F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader_SBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,7 +213,7 @@
 				8E1AF5D628FD8D8E0040873C /* Protocols */,
 				8EFD685B28F5AD6800C128DC /* Home.storyboard */,
 				8E1AF53328F5B1F10040873C /* Views */,
-				8E1AF53228F5B1DD0040873C /* Models */,
+				8E1AF53228F5B1DD0040873C /* ViewModels */,
 				8E1AF53128F5B1D50040873C /* ViewControllers */,
 			);
 			path = HomePage;
@@ -227,12 +227,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		8E1AF53228F5B1DD0040873C /* Models */ = {
+		8E1AF53228F5B1DD0040873C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				8E1AF55728F5C7660040873C /* HomeViewModel.swift */,
 			);
-			path = Models;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8E1AF53328F5B1F10040873C /* Views */ = {
@@ -272,7 +272,7 @@
 			children = (
 				8E1AF5CD28FD8D200040873C /* Protocols */,
 				8E1AF53928F5B3E70040873C /* ViewControllers */,
-				8E1AF53828F5B3DA0040873C /* Models */,
+				8E1AF53828F5B3DA0040873C /* ViewModels */,
 				8E1AF53728F5B3CD0040873C /* Views */,
 				8E1AF53C28F5B4240040873C /* CSVDataFlow.storyboard */,
 			);
@@ -287,14 +287,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8E1AF53828F5B3DA0040873C /* Models */ = {
+		8E1AF53828F5B3DA0040873C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				8E1AF54428F5B9FD0040873C /* CSVDisplayable.swift */,
 				8E1AF54828F5BFD10040873C /* CSVDataViewModel.swift */,
 				8E1AF57B28F856CF0040873C /* Issue.swift */,
 			);
-			path = Models;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8E1AF53928F5B3E70040873C /* ViewControllers */ = {
@@ -414,8 +414,8 @@
 			isa = PBXGroup;
 			children = (
 				8E1AF5B928FC774D0040873C /* HomeScreenTest.swift */,
-				8EFD687628F5AD6A00C128DC /* CSVReader_SBUITests.swift */,
 				8EFD687828F5AD6A00C128DC /* CSVReader_SBUITestsLaunchTests.swift */,
+				8E1AF5E928FDDADC0040873C /* CSVReaderScreenTest.swift */,
 			);
 			path = CSVReader_SBUITests;
 			sourceTree = "<group>";
@@ -648,7 +648,6 @@
 				8E1AF5A628FB1D680040873C /* BaseViewController.swift in Sources */,
 				8E1AF5BB28FC79690040873C /* Constants.swift in Sources */,
 				8E1AF5C028FC7B8A0040873C /* CoordinatorType.swift in Sources */,
-				8EFD687728F5AD6A00C128DC /* CSVReader_SBUITests.swift in Sources */,
 				8E1AF5BE28FC7B800040873C /* Issue.swift in Sources */,
 				8E1AF5D528FD8D640040873C /* CSVDataViewModelType.swift in Sources */,
 				8E1AF5BD28FC7B7E0040873C /* CSVDataViewModel.swift in Sources */,
@@ -673,6 +672,7 @@
 				8E1AF5E828FD97640040873C /* CSVReaderType.swift in Sources */,
 				8E1AF5C228FC7B900040873C /* DummyReader.swift in Sources */,
 				8E1AF5A828FB1E940040873C /* HomeViewController.swift in Sources */,
+				8E1AF5EA28FDDADC0040873C /* CSVReaderScreenTest.swift in Sources */,
 				8E1AF5A728FB1E8B0040873C /* BlurView.swift in Sources */,
 				8E1AF5C728FC7B9F0040873C /* UIStoryboard+Extension.swift in Sources */,
 			);

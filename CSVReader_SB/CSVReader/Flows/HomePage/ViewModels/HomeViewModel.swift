@@ -20,7 +20,7 @@ class HomeViewModel: HomeViewModelType {
         self.csvReader = csvReader
         self.coordinator = coordinator
     }
-        
+    
     func loadCSVUrl(data: String?) {
         self.csvReader.loadedCSVData = data
     }

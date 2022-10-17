@@ -35,12 +35,14 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIM-ds-hzh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="175" height="29"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="mainLabelTitleId"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvg-CO-pHY">
                                                                     <rect key="frame" x="0.0" y="39" width="175" height="29"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="mainLabelDescriptionId"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -52,12 +54,14 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHg-hC-twa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="175" height="25"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="secondaryLabelTitleId"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cca-WC-Eds">
                                                                     <rect key="frame" x="0.0" y="43" width="175" height="25"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="secondaryLabelDescriptionId"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -74,6 +78,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="XzD-0F-Pzp" secondAttribute="bottom" id="p4G-n1-LdM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="CSVDataCellId"/>
                                         <connections>
                                             <outlet property="mainLabelDescription" destination="Yvg-CO-pHY" id="Bmy-Lq-Oda"/>
                                             <outlet property="mainLabelTitle" destination="uIM-ds-hzh" id="UMg-Fn-SzW"/>

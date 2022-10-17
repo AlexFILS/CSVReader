@@ -54,9 +54,13 @@ class BattingReader: CSVReaderType {
     var loadedCSVData: String?
     var rawData: [[String]]?
     
+    // MARK: - Init
+    
     init(numberOfColumns: Int) {
         self.numberOfColumns = numberOfColumns
     }
+    
+    // MARK: - Functions
     
     func readAndParseData() async -> [ReaderOutput] {
         await self.readRawData()
@@ -64,7 +68,7 @@ class BattingReader: CSVReaderType {
         return result
     }
     
-    func readRawData() async {
+    private func readRawData() async {
         guard let data = self.loadedCSVData else {
             return
         }
@@ -86,7 +90,7 @@ class BattingReader: CSVReaderType {
         }
     }
     
-    func parseData() async -> [Batting] {
+    private func parseData() async -> [Batting] {
         guard let data = rawData else {
             return []
         }
