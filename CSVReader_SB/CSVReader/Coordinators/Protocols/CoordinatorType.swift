@@ -15,7 +15,3 @@ protocol CoordinatorType: AnyObject {
     func start()
     func popController()
 }
-
-protocol CSVCapableCoordinatorType {
-    func openFilePicker(onController controller: HomeViewController)
-}

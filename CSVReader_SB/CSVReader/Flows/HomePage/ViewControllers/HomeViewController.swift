@@ -21,6 +21,7 @@ class HomeViewController: BaseViewController {
     }
     
     // MARK: - Button actions
+    
     @IBAction func loadCsvButtonTapped(_ sender: Any) {
         self.viewModel.coordinator?.openFilePicker(onController: self)
     }
@@ -35,7 +36,7 @@ class HomeViewController: BaseViewController {
     
     private func returnCompiledData() async {
         self.showLoadingIndicator()
-        if let data = await self.viewModel.csvReader.readAndParseData() as? [Issue],
+        if let data = await self.viewModel.csvReader.readAndParseData() as? [CSVDisplayable],
            data.count > 0 {
             self.hideLoadingIndicator()
             self.viewModel.coordinator?.goToCSVViewer(data: data)
@@ -67,6 +68,7 @@ class HomeViewController: BaseViewController {
 }
 
 // MARK: - Document Picker Delegate
+
 extension HomeViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let url = urls.first,

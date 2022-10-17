@@ -94,4 +94,25 @@ class IssueReaderTest: XCTestCase {
         let parsedIssues = await reader.parseData()
         XCTAssertEqual(parsedIssues.count, 0)
     }
+    
+    func testReaderOutputValuesWithCorrectAndCorruptData() async {
+        let reader = IssueReader(numberOfColumns: 4)
+        let data = "\"First name\",\"Sur name\",\"Issue count\",\"Date of birth\"\r\n\"Theo\",\"Jansen\",5,\"1978-01-02T00:00:00\"\r\nAlex\",\"Mihai\",5,\"1993-01-18T03:00:00\\,\"extra column\",\\r\n"
+        reader.loadedCSVData = data
+        await reader.readRawData()
+        let parsedIssues = await reader.parseData()
+        if let issue = parsedIssues.first {
+            let expectedIssue = Issue(
+                name: "Theo",
+                surname: "Jansen",
+                dateOfBirth: "1978-01-02T00:00:00",
+                issueCount: "5"
+            )
+            XCTAssertEqual(issue, expectedIssue)
+        } else {
+            XCTFail("Did not return an issue object.")
+        }
+        
+        XCTAssertEqual(parsedIssues.count, 1)
+    }
 }

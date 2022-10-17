@@ -7,14 +7,6 @@
 
 import Foundation
 
-protocol CSVReaderType<ReaderOutput> {
-    associatedtype ReaderOutput
-    var numberOfColumns: Int { get }
-    var loadedCSVData: String? { get set }
-    var rawData: [[String]]? { get }
-    func readAndParseData() async -> [ReaderOutput]
-}
-
 class IssueReader: CSVReaderType {
     typealias ReaderOutput = Issue
     var rawData: [[String]]?
