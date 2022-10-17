@@ -1,6 +1,14 @@
 # CSVReader
 Assignment
 
+# TOOLS:
+
+- Xcode Version 14.0.1 
+- Target API: 16.0
+- Swift version: 5
+
+
+# Description
   The application can be used to read the "Issues.csv" provided for this assignment. 
   As-is, the CSV reader can open and view only the contents of this CSV. To demonstrate the capabilities of my implementation, I have added a 2nd CSV reader
 called "BattingReader'. This reader is capabel of opening and displaying the contents of the "Batting.csv" which I included in this repo.
