@@ -9,6 +9,7 @@ called "BattingReader'. This reader is capabel of opening and displaying the con
   1. Create the CSV reader class and implement CSVReaderTYpe.
   2. Create your parsing methods (the way tour reader views the raw data and transforms it into Swift objects)
   3. Inject the reader in the view model (from the MainCoordinator)
-  Additionally: 4. Create your own implementation of how the data will be displayed in the table view, inject it in the CSvDataViewModel.
+  Additionally: 
+  4. Create your own implementation of how the data will be displayed in the table view, inject it in the CSvDataViewModel.
   
   
