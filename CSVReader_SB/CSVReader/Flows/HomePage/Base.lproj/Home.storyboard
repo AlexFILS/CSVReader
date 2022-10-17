@@ -16,34 +16,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNz-gl-A0R">
-                                <rect key="frame" x="157.66666666666666" y="411" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="openCsvButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="doQ-Pf-kfr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOZ-i3-yGw">
-                                <rect key="frame" x="158" y="359" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="loadCsvButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zXl-PN-gfZ"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="OSy-Ig-VI0">
+                                <rect key="frame" x="157.66666666666666" y="366" width="75" height="125"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hO-ec-pYf">
+                                        <rect key="frame" x="16.666666666666689" y="0.0" width="41.333333333333343" height="34.333333333333336"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="loadedCSVLabel" label="loadedCSVLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOZ-i3-yGw">
+                                        <rect key="frame" x="0.0" y="45.333333333333314" width="75" height="34.333333333333343"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="loadCSVButton"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="loadCsvButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zXl-PN-gfZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNz-gl-A0R">
+                                        <rect key="frame" x="0.0" y="90.666666666666686" width="75" height="34.333333333333343"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="openCSVButton"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="openCsvButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="doQ-Pf-kfr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mNz-gl-A0R" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2jV-zn-Cvm"/>
-                            <constraint firstItem="JOZ-i3-yGw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9XO-bX-RXH"/>
-                            <constraint firstItem="mNz-gl-A0R" firstAttribute="top" secondItem="JOZ-i3-yGw" secondAttribute="bottom" constant="17" id="A05-Si-Snx"/>
-                            <constraint firstItem="mNz-gl-A0R" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X3V-uV-92f"/>
+                            <constraint firstItem="OSy-Ig-VI0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MV7-RM-7gF"/>
+                            <constraint firstItem="OSy-Ig-VI0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cdx-LU-rGz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OSy-Ig-VI0" secondAttribute="trailing" constant="20" id="dgK-kz-y4E"/>
+                            <constraint firstItem="OSy-Ig-VI0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xmZ-Jm-Lhf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loadCsvButton" destination="JOZ-i3-yGw" id="G3v-qw-Uhi"/>
+                        <outlet property="loadedCsvLabel" destination="4hO-ec-pYf" id="TSh-Q0-rN9"/>
                         <outlet property="openCsvButton" destination="mNz-gl-A0R" id="t4z-OP-Rs7"/>
                     </connections>
                 </viewController>

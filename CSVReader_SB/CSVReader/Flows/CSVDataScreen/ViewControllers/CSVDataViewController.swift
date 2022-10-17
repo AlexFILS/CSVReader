@@ -32,8 +32,9 @@ class CSVDataViewController: BaseViewController {
 // MARK: - TableViewDataSource
 
 extension CSVDataViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.numberOfRows(inSection: section) ?? 0
+        return self.viewModel.numberOfRows(inSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
