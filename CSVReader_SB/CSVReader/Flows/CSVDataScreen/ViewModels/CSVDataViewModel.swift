@@ -11,15 +11,8 @@ enum CellType {
     case issueCell(cellViewModel: CSVDisplayableType)
 }
 
-protocol CSVDataViewModelType {
-    associatedtype ContainedDataType
-    var coordinator: MainCoordinator? { get }
-    func numberOfRows(inSection: Int) -> Int 
-    func modelForIndex(_ indexPath: IndexPath) -> CellType?
-    
-}
-
 class CSVDataViewModel: CSVDataViewModelType {
+  
     typealias CellTypeEnum = CellType
     typealias ContainedDataType = CSVDisplayable
     
@@ -44,6 +37,8 @@ class CSVDataViewModel: CSVDataViewModelType {
             return nil
         }
     }
+    
+    // MARK: - Functions
     
     func numberOfRows(inSection: Int) -> Int {
         return self.sections.elementAtPosition(inSection)?.items.count ?? 0

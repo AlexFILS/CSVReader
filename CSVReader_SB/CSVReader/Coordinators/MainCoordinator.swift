@@ -13,14 +13,17 @@ class MainCoordinator: CoordinatorType, CSVCapableCoordinatorType {
     var navigationController: UINavigationController
     
     // MARK: - Init
+    
     init(navController : UINavigationController) {
         self.navigationController = navController
     }
     
+    // MARK: - Functions
+    
     func start() {
         self.goToHomePage()
     }
-
+    
     func goToHomePage() {
         let homeViewController = HomeViewController.instantiate(flow: .home)
         let csvReader = IssueReader(numberOfColumns: 4)

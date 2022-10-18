@@ -28,6 +28,12 @@ enum CellIdentifiers: String {
     case issueCell = "CSVDataCell"
 }
 
+// MARK: - CSVDataCellConstants
+
+enum CSVDataCellConstants: String {
+    case issuesLabelText = "Issues"
+}
+
 // MARK: - HomeViewModel
 
 enum HomeScreenLiterals: String {
@@ -40,7 +46,15 @@ enum HomeScreenLiterals: String {
 // MARK: - Identifiers
 
 enum HomeScreenIdentifiers: String {
-    case loadedCSVLabel
-    case loadCSVButton
-    case openCSVButton
+    case openCSVButtonId
+    case loadCSVButtonId
+    case csvStatusLabelId
+}
+
+enum CSVDataScreenIdentifiers: String {
+    case csvDataCellId = "CSVDataCellId"
+    case mainLabelTitleId
+    case mainLabelDescriptionId
+    case secondaryLabelTitleId
+    case secondaryLabelDescriptionId
 }

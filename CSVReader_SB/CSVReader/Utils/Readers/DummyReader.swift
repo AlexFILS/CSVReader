@@ -43,7 +43,7 @@ class DummyReader: CSVReaderType {
         return result
     }
     
-    func parseData() async -> [DummyReaderOutputObject] {
+    private func parseData() async -> [DummyReaderOutputObject] {
         return [
             DummyReaderOutputObject(
                 store: "Fashion Outlet",

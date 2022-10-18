@@ -16,15 +16,10 @@ class CSVDataViewController: BaseViewController {
     
     override func viewDidLoad() {
         self.csvDataTableView.dataSource = self
+        super.viewDidLoad()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.viewModel?.coordinator?.popController()
-    }
-    
-    // MARK: - Button ACtions
-    
-    @IBAction func backtapped(_ sender: Any) {
         self.viewModel?.coordinator?.popController()
     }
 }
@@ -32,7 +27,7 @@ class CSVDataViewController: BaseViewController {
 // MARK: - TableViewDataSource
 
 extension CSVDataViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows(inSection: section)
     }

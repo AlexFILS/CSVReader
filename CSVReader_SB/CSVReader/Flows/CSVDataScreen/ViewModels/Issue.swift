@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Should have been in the 'Models' folder but Xcode doesn't allow me to move files anymore... for some reason...
 class Issue: CSVDisplayable, Equatable {
     init(
         name: String,
@@ -18,7 +19,7 @@ class Issue: CSVDisplayable, Equatable {
         super.init(
             mainLabelTitle: name + " " + surname,
             mainLabelSubtitle: dateOfBirth,
-            secondaryLabelTitle: "Issues",
+            secondaryLabelTitle: CSVDataCellConstants.issuesLabelText.rawValue,
             secondaryLabelSubtitle:  issueCount
         )
     }
