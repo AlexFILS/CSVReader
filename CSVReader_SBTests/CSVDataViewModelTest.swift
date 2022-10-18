@@ -8,7 +8,6 @@
 
 import XCTest
 
-@testable import CSVReader_SB
 class CSVDataViewModelTest: XCTestCase {
     
     // Use a random class that may have data loaded from a CSV and cand be displayed in the csv reader table

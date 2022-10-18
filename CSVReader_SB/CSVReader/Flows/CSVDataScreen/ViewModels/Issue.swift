@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Should have been in the 'Models' folder but Xcode doesn't allow me to move files for some reason...
 class Issue: CSVDisplayable, Equatable {
     init(
         name: String,

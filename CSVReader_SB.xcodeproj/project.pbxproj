@@ -270,6 +270,7 @@
 		8E1AF53628F5B3C60040873C /* CSVDataScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8E1AF5EB28FE917B0040873C /* Models */,
 				8E1AF5CD28FD8D200040873C /* Protocols */,
 				8E1AF53928F5B3E70040873C /* ViewControllers */,
 				8E1AF53828F5B3DA0040873C /* ViewModels */,
@@ -367,6 +368,13 @@
 				8E1AF5DC28FD8DC70040873C /* CSVCapableCoordinatorType.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8E1AF5EB28FE917B0040873C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8EFD684928F5AD6800C128DC = {
