@@ -15,14 +15,14 @@ class IssueReaderTest: XCTestCase {
         let reader = IssueReader(numberOfColumns: 4)
         var data = "colum1, colum2 ,colum3"
         reader.loadedCSVData = data
-       // await reader.readRawData()
+        // await reader.readRawData()
         var parsedIssues = await reader.readAndParseData()
         XCTAssertTrue(parsedIssues.count == 0)
         
         // Wrong CSV format: Only column description present but no entries
         data = "colum1, colum2"
         reader.loadedCSVData = data
-     //   await reader.readRawData()
+        //   await reader.readRawData()
         parsedIssues =  await reader.readAndParseData()
         XCTAssertTrue(parsedIssues.count == 0)
         

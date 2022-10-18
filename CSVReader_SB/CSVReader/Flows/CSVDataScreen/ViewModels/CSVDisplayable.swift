@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Should have been in the 'Models' folder but Xcode doesn't allow me to move files anymore... for some reason...
 class CSVDisplayable: CSVDisplayableType {
     let mainLabelTitle: String
     let mainLabelSubtitle: String
