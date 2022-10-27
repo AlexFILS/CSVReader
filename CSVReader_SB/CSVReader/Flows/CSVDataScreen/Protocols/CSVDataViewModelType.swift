@@ -8,7 +8,6 @@
 import Foundation
 
 protocol CSVDataViewModelType {
-    associatedtype ContainedDataType
     var coordinator: MainCoordinator? { get }
     func numberOfRows(inSection: Int) -> Int
     func modelForIndex(_ indexPath: IndexPath) -> CellType?

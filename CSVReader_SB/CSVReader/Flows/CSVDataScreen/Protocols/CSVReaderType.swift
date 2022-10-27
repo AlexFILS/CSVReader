@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CSVReaderType<ReaderOutput> {
+protocol CSVReaderType {
     associatedtype ReaderOutput
     var numberOfColumns: Int { get }
     var loadedCSVData: String? { get set }

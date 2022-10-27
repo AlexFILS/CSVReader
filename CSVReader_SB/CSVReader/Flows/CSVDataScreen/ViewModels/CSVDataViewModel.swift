@@ -14,7 +14,6 @@ enum CellType {
 class CSVDataViewModel: CSVDataViewModelType {
   
     typealias CellTypeEnum = CellType
-    typealias ContainedDataType = CSVDisplayable
     
     public struct Section {
         let items: [CellType]
@@ -25,7 +24,7 @@ class CSVDataViewModel: CSVDataViewModelType {
     
     // MARK: - Init
     
-    init(data: [ContainedDataType]) {
+    init(data: [CSVDisplayable]) {
         self.generateSections(data: data)
     }
     
@@ -44,7 +43,7 @@ class CSVDataViewModel: CSVDataViewModelType {
         return self.sections.elementAtPosition(inSection)?.items.count ?? 0
     }
     
-    private func generateSections(data: [ContainedDataType]) {
+    private func generateSections(data: [CSVDisplayable]) {
         var sections = [Section]()
         if let issueSection = self.generateIssuesSection(data: data) {
             sections.append(issueSection)
@@ -52,7 +51,7 @@ class CSVDataViewModel: CSVDataViewModelType {
         self.sections = sections
     }
     
-    private func generateIssuesSection(data: [ContainedDataType]) -> Section? {
+    private func generateIssuesSection(data: [CSVDisplayable]) -> Section? {
         var cells = [CellType]()
         data.forEach { element in
             cells.append(.issueCell(cellViewModel: element))

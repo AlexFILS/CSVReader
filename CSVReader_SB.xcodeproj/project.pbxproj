@@ -295,7 +295,6 @@
 			children = (
 				8E1AF54428F5B9FD0040873C /* CSVDisplayable.swift */,
 				8E1AF54828F5BFD10040873C /* CSVDataViewModel.swift */,
-				8E1AF57B28F856CF0040873C /* Issue.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -375,6 +374,7 @@
 		8E1AF5EB28FE917B0040873C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E1AF57B28F856CF0040873C /* Issue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
